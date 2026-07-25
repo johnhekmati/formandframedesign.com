@@ -1283,12 +1283,16 @@ th.highlight {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.65rem;
+  align-items: stretch;
 }
 
 .work-marks img {
+  display: block;
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center center;
   border: 1px solid var(--line);
   border-radius: 0.45rem;
   background: #0a0a0a;
