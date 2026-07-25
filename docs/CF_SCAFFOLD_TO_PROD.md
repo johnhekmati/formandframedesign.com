@@ -28,4 +28,14 @@ Reuse the same token/account as HCG/TCF.
 
 ## Domain
 
-Zone `formandframedesign.com` on the same CF account → run **Attach Cloudflare custom domain**.
+1. Zone `formandframedesign.com` on the **same** Cloudflare account as Pages.
+2. Run workflow **Attach Cloudflare custom domain** (or push that yml once).
+3. Ensure **DNS records** for apex + `www` (attach alone may leave zone SOA-only until CNAMEs exist).
+4. Wait cert **pending → active**. Apex uses CF CNAME flattening.
+
+**DNS operator card (records + Proton placeholders):** [`DNS.md`](DNS.md)
+
+| Type | Name | Content | Proxy |
+|------|------|---------|-------|
+| CNAME | `@` | `form-and-frame-design.pages.dev` | Proxied |
+| CNAME | `www` | `form-and-frame-design.pages.dev` | Proxied |

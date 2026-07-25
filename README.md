@@ -27,4 +27,5 @@ npm run preview
 
 ## Ops
 
-[`docs/CF_SCAFFOLD_TO_PROD.md`](docs/CF_SCAFFOLD_TO_PROD.md)
+- CF scaffold: [`docs/CF_SCAFFOLD_TO_PROD.md`](docs/CF_SCAFFOLD_TO_PROD.md)
+- DNS (web + Proton park): [`docs/DNS.md`](docs/DNS.md)
