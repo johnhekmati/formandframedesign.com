@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=ffd6" />
+  <link rel="stylesheet" href="/css/styles.css?v=ffd8" />
 
   <meta property="og:title" content="Form & Frame Design" />
   <meta property="og:description" content="Professional websites grounded in your real reviews and social presence. Clear packages. Claim my site." />
@@ -30,7 +30,7 @@
     "url": "https://formandframedesign.com",
     "email": "hello@formandframedesign.com",
     "description": "Form & Frame Design builds claimable professional websites from real business signals — public reviews, social presence, and store facts — for local shops and weekend sellers.",
-    "priceRange": "$500 - $2,500",
+    "priceRange": "$1,000 - $2,500",
     "logo": "https://formandframedesign.com/assets/images/ffd-mark.png",
     "image": "https://formandframedesign.com/assets/images/ffd-brand-sheet.jpg"
   }
@@ -72,7 +72,7 @@
           </p>
           <div class="price-pills">
             <div class="pill"><strong>$2,500</strong><span>Real shops · full package</span></div>
-            <div class="pill"><strong>$500–$1,000</strong><span>Weekend sellers · clean identity</span></div>
+            <div class="pill"><strong>$1,000</strong><span>Weekend sellers · clean identity</span></div>
           </div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#claim">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
@@ -81,8 +81,9 @@
           <p class="hero-note">
             Built under a disciplined factory process. One clear primary action: claim ownership of a site that already looks like you.
           </p>
-          <a class="hero-proof" href="#work">
+          <a class="hero-proof" href="#work" id="hero-proof-chip">
             <img
+              id="hero-proof-thumb"
               src="/assets/images/portfolio/pmmai/pmmai-14-crest.jpg"
               alt=""
               width="56"
@@ -90,19 +91,20 @@
             />
             <span class="hero-proof-copy">
               <strong>Live proof</strong>
-              <span>Professional MMA Institute · professionalmmainstitute.com</span>
+              <span id="hero-proof-label">Professional MMA Institute · professionalmmainstitute.com</span>
             </span>
             <span class="hero-proof-go" aria-hidden="true">→</span>
           </a>
         </div>
         <div class="hero-visual reveal reveal-delay-1">
-          <figure class="preview-stage">
+          <figure class="preview-stage" data-hero-carousel>
             <span class="crop crop-tl" aria-hidden="true"></span>
             <span class="crop crop-tr" aria-hidden="true"></span>
             <span class="crop crop-bl" aria-hidden="true"></span>
             <span class="crop crop-br" aria-hidden="true"></span>
             <a
               class="site-preview"
+              id="hero-site-link"
               href="https://professionalmmainstitute.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -110,21 +112,31 @@
               <div class="browser">
                 <div class="browser-bar">
                   <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <span class="browser-url">professionalmmainstitute.com</span>
+                  <span class="browser-url" id="hero-browser-url">professionalmmainstitute.com</span>
                 </div>
                 <div class="browser-viewport">
-                  <img
-                    src="/assets/images/portfolio/pmmai/pmmai-desktop-hero.png?v=1"
-                    alt="Professional MMA Institute homepage on desktop — Mind. Body. Soul. Might for Right."
+                  <video
+                    id="hero-proof-video"
+                    class="hero-proof-video"
                     width="1440"
                     height="900"
-                    loading="eager"
-                  />
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster="/assets/images/portfolio/pmmai/pmmai-desktop-hero.png?v=1"
+                    aria-label="Live proof loop: Professional MMA Institute, The Cognition Factory, and John Hekmati — about ten seconds each"
+                  >
+                    <source src="/assets/video/hero-proof-loop.webm" type="video/webm" />
+                    <source src="/assets/video/hero-proof-loop.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </div>
               <div class="device-phone" aria-hidden="true">
                 <div class="device-phone-notch"></div>
                 <img
+                  id="hero-phone-img"
                   src="/assets/images/portfolio/pmmai/pmmai-phone-hero.png?v=1"
                   alt=""
                   width="390"
@@ -134,8 +146,8 @@
               </div>
             </a>
             <figcaption class="framed-plate">
-              <span>Professional MMA Institute</span>
-              <span class="framed-plate-spec">Live site · №&nbsp;002</span>
+              <span id="hero-plate-title">Professional MMA Institute</span>
+              <span class="framed-plate-spec" id="hero-plate-spec">Live site · №&nbsp;002</span>
             </figcaption>
           </figure>
         </div>
@@ -373,7 +385,7 @@
             tabindex="0"
             aria-selected="false"
             data-package="tier-b"
-            data-subject="Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%28500-1000%29"
+            data-subject="Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%281000%29"
           >
             <span class="crop crop-tl" aria-hidden="true"></span>
             <span class="crop crop-tr" aria-hidden="true"></span>
@@ -381,16 +393,16 @@
             <span class="crop crop-br" aria-hidden="true"></span>
             <p class="tier">Tier B · Weekenders</p>
             <h3>Clean identity</h3>
-            <p class="amount">$500–$1,000 <small>one-time hand-over</small></p>
+            <p class="amount">$1,000 <small>one-time hand-over</small></p>
             <ul>
-              <li>Trader’s Village, flea, weekend table or suite — not a full shop</li>
+              <li>Flea market, weekend table or suite — not a full shop</li>
               <li>Strong, quick, clean brand presence</li>
               <li>Simple mark treatment in your colors</li>
               <li>CTA funnel to SMS, DM, email, or Facebook — how you already sell</li>
               <li>Mobile-first · claim path · one revision</li>
               <li>Not the full shop package (by design)</li>
             </ul>
-            <a class="btn pkg-cta" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%28500-1000%29">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
+            <a class="btn pkg-cta" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%281000%29">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
@@ -419,10 +431,80 @@
           <p class="section-label"><span class="section-num">07</span>Proof</p>
           <h2>Live work. Real <em>front doors.</em></h2>
           <p class="intro">
-            Shipped sites only — grounded in the client’s own marks, curriculum, and public language.
-            No stock stand-ins. No invented storefronts.
+            Three shipped sites — a product loop, a house martial path, and a personal formation page —
+            each grounded in real marks, language, and public proof. No stock stand-ins. No invented storefronts.
           </p>
         </div>
+
+        <div class="work-stack">
+        <article class="work-card reveal">
+          <span class="crop crop-tl" aria-hidden="true"></span>
+          <span class="crop crop-tr" aria-hidden="true"></span>
+          <span class="crop crop-bl" aria-hidden="true"></span>
+          <span class="crop crop-br" aria-hidden="true"></span>
+
+          <div class="work-media">
+            <a
+              class="work-shot"
+              href="https://thecognitionfactory.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="browser browser--work">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">thecognitionfactory.com</span>
+                </div>
+                <div class="browser-viewport">
+                  <img
+                    src="/assets/images/portfolio/tcf/tcf-desktop-hero.png?v=1"
+                    alt="The Cognition Factory — desktop homepage"
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </a>
+            <div class="work-marks" aria-hidden="true">
+              <img src="/assets/images/portfolio/tcf/tcf-hale.jpg" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/tcf/tcf-aae.jpg" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/tcf/tcf-css.jpg" alt="" width="200" height="200" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-body">
+            <p class="work-meta">
+              <span class="work-num">№&nbsp;001</span>
+              <span>Live · Product / upskilling</span>
+            </p>
+            <h3>The Cognition Factory</h3>
+            <p class="work-lede">
+              Upskilling that sticks for busy adults and teams: map the subject, practice under honest pressure,
+              and save your place when life interrupts — not another content binge.
+            </p>
+            <ul class="work-facts">
+              <li><strong>Loop</strong> — map · practice · save place</li>
+              <li><strong>HAL-E</strong> — deep learning until you can explain without notes</li>
+              <li><strong>AAE Practice</strong> — closed-notes runs aimed at real gaps</li>
+              <li><strong>Dojo</strong> — scenario packs that ask for delivery, not recognition</li>
+              <li><strong>Audience</strong> — solo learners, teams, and partners who need proof</li>
+            </ul>
+            <p class="work-note">
+              Dark void + electric brand restraint carried through hero, product doors, and guides —
+              one factory story from first scroll to contact.
+            </p>
+            <div class="work-actions">
+              <a
+                class="btn btn-primary"
+                href="https://thecognitionfactory.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Open live site<span class="btn-arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="#claim">Claim a site like this</a>
+            </div>
+          </div>
+        </article>
 
         <article class="work-card reveal">
           <span class="crop crop-tl" aria-hidden="true"></span>
@@ -492,6 +574,75 @@
             </div>
           </div>
         </article>
+
+        <article class="work-card reveal">
+          <span class="crop crop-tl" aria-hidden="true"></span>
+          <span class="crop crop-tr" aria-hidden="true"></span>
+          <span class="crop crop-bl" aria-hidden="true"></span>
+          <span class="crop crop-br" aria-hidden="true"></span>
+
+          <div class="work-media">
+            <a
+              class="work-shot"
+              href="https://johnhekmati.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="browser browser--work">
+                <div class="browser-bar">
+                  <span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="browser-url">johnhekmati.com</span>
+                </div>
+                <div class="browser-viewport">
+                  <img
+                    src="/assets/images/portfolio/jh/jh-desktop-hero.png?v=1"
+                    alt="John Hekmati — desktop homepage"
+                    width="1440"
+                    height="900"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </a>
+            <div class="work-marks" aria-hidden="true">
+              <img src="/assets/images/portfolio/jh/jh-world-hcg.png?v=2" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/jh/jh-world-tcf.png?v=2" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/jh/jh-world-pmmai.jpg?v=2" alt="" width="200" height="200" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="work-body">
+            <p class="work-meta">
+              <span class="work-num">№&nbsp;003</span>
+              <span>Live · Personal / formation</span>
+            </p>
+            <h3>John Hekmati</h3>
+            <p class="work-lede">
+              The person behind the work — formation under load, and the worlds that came from living it.
+              Husband, father, engineer, martial artist, founder.
+            </p>
+            <ul class="work-facts">
+              <li><strong>Life</strong> — martial floor, home under complex care, hard domains</li>
+              <li><strong>Worlds</strong> — Hekmati Consulting · Cognition Factory · PMMAI</li>
+              <li><strong>Tone</strong> — portrait-led, serif display, restrained dark surface</li>
+              <li><strong>Question</strong> — can you still do the work a month later?</li>
+              <li><strong>Close</strong> — short note for fit, not volume</li>
+            </ul>
+            <p class="work-note">
+              Personal site as a quiet hub — three operating worlds under one person, without turning the person into a brand avatar.
+            </p>
+            <div class="work-actions">
+              <a
+                class="btn btn-primary"
+                href="https://johnhekmati.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Open live site<span class="btn-arrow" aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="#claim">Claim a site like this</a>
+            </div>
+          </div>
+        </article>
+        </div>
       </div>
     </section>
 
@@ -672,6 +823,96 @@
       }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
 
       els.forEach(function (el) { io.observe(el); });
+    })();
+
+    /* Hero proof video: sync chrome URL, phone, plate, and chip to ~10s slides */
+    (function () {
+      var video = document.getElementById("hero-proof-video");
+      if (!video) return;
+
+      var slides = [
+        {
+          until: 9.5,
+          url: "professionalmmainstitute.com",
+          href: "https://professionalmmainstitute.com/",
+          title: "Professional MMA Institute",
+          spec: "Live site · №\u00a0002",
+          label: "Professional MMA Institute · professionalmmainstitute.com",
+          phone: "/assets/images/portfolio/pmmai/pmmai-phone-hero.png?v=1",
+          thumb: "/assets/images/portfolio/pmmai/pmmai-14-crest.jpg",
+        },
+        {
+          until: 18.5,
+          url: "thecognitionfactory.com",
+          href: "https://thecognitionfactory.com/",
+          title: "The Cognition Factory",
+          spec: "Live site · №\u00a0001",
+          label: "The Cognition Factory · thecognitionfactory.com",
+          phone: "/assets/images/portfolio/tcf/tcf-phone-hero.png?v=1",
+          thumb: "/assets/images/portfolio/tcf/tcf-hale.jpg",
+        },
+        {
+          until: 999,
+          url: "johnhekmati.com",
+          href: "https://johnhekmati.com/",
+          title: "John Hekmati",
+          spec: "Live site · №\u00a0003",
+          label: "John Hekmati · johnhekmati.com",
+          phone: "/assets/images/portfolio/jh/jh-phone-hero.png?v=1",
+          thumb: "/assets/images/portfolio/jh/jh-mark-portrait.png",
+        },
+      ];
+
+      var link = document.getElementById("hero-site-link");
+      var urlEl = document.getElementById("hero-browser-url");
+      var phone = document.getElementById("hero-phone-img");
+      var plateTitle = document.getElementById("hero-plate-title");
+      var plateSpec = document.getElementById("hero-plate-spec");
+      var proofLabel = document.getElementById("hero-proof-label");
+      var proofThumb = document.getElementById("hero-proof-thumb");
+      var active = -1;
+
+      function applySlide(i) {
+        if (i === active) return;
+        active = i;
+        var s = slides[i];
+        if (link) link.href = s.href;
+        if (urlEl) urlEl.textContent = s.url;
+        if (phone && phone.getAttribute("src") !== s.phone) phone.src = s.phone;
+        if (plateTitle) plateTitle.textContent = s.title;
+        if (plateSpec) plateSpec.textContent = s.spec;
+        if (proofLabel) proofLabel.textContent = s.label;
+        if (proofThumb && proofThumb.getAttribute("src") !== s.thumb) proofThumb.src = s.thumb;
+      }
+
+      function sync() {
+        var t = video.currentTime || 0;
+        for (var i = 0; i < slides.length; i++) {
+          if (t < slides[i].until) {
+            applySlide(i);
+            return;
+          }
+        }
+        applySlide(slides.length - 1);
+      }
+
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) {
+        video.removeAttribute("autoplay");
+        video.pause();
+        applySlide(0);
+        return;
+      }
+
+      applySlide(0);
+      video.addEventListener("timeupdate", sync);
+      video.addEventListener("seeked", sync);
+      video.addEventListener("play", sync);
+
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () { /* autoplay blocked — poster remains */ });
+      }
     })();
   </script>
 </body>

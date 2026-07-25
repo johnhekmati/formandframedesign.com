@@ -18,6 +18,9 @@
 /assets/*
   Cache-Control: public, max-age=3600, must-revalidate
 
+/assets/video/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
 # Never long-cache HTML — avoids serving new markup against a poisoned ?v= stylesheet URL
 /
   Cache-Control: public, max-age=60, must-revalidate
