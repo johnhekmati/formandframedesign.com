@@ -12,38 +12,60 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=ffd3" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css?v=ffd4" />
 
   <meta property="og:title" content="Form & Frame Design" />
   <meta property="og:description" content="Professional websites grounded in your real reviews and social presence. Clear packages. Claim my site." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://formandframedesign.com" />
   <meta property="og:image" content="https://formandframedesign.com/assets/images/ffd-brand-sheet.jpg" />
+  <link rel="canonical" href="https://formandframedesign.com/" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Form & Frame Design",
+    "url": "https://formandframedesign.com",
+    "email": "hello@formandframedesign.com",
+    "description": "Form & Frame Design builds claimable professional websites from real business signals — public reviews, social presence, and store facts — for local shops and weekend sellers.",
+    "priceRange": "$500 - $2,500",
+    "logo": "https://formandframedesign.com/assets/images/ffd-mark.png",
+    "image": "https://formandframedesign.com/assets/images/ffd-brand-sheet.jpg"
+  }
+  </script>
 </head>
 <body>
-  <header class="nav">
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <header class="nav" id="nav">
     <div class="nav-inner">
       <a class="nav-brand" href="#top" aria-label="Form &amp; Frame Design — Home">
-        <img src="/assets/images/ffd-mark-nav.png" width="32" height="32" alt="" />
-        <span>Form &amp; Frame</span>
+        <img src="/assets/images/ffd-mark-nav.png" width="34" height="34" alt="" />
+        <span class="nav-brand-name">Form <em>&amp;</em> Frame</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#problem">Why it matters</a>
         <a href="#how">How it works</a>
         <a href="#packages">Packages</a>
         <a href="#fit">Fit</a>
+        <a href="#faq">FAQ</a>
         <a href="#claim" class="nav-cta">Claim my site</a>
       </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
+      <div class="hero-grid-lines" aria-hidden="true"></div>
       <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow">Website factory · real businesses</p>
-          <h1>A site built from your proof — ready to claim.</h1>
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-tick" aria-hidden="true"></span>Website factory · Real businesses</p>
+          <h1>A site built from your <em>proof</em> — ready to claim.</h1>
           <p class="lede">
             Form &amp; Frame Design turns public reviews, social posts, and store facts into a
             clean, mobile-first website you can own. No blank template guessing. No endless redesign theater.
@@ -53,47 +75,71 @@
             <div class="pill"><strong>$500–$1,000</strong><span>Weekend sellers · clean identity</span></div>
           </div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#claim">Claim my site</a>
+            <a class="btn btn-primary" href="#claim">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
             <a class="btn btn-secondary" href="#packages">See packages</a>
           </div>
           <p class="hero-note">
             Built under a disciplined factory process. One clear primary action: claim ownership of a site that already looks like you.
           </p>
         </div>
-        <div class="hero-visual">
-          <p class="hero-visual-label">Brand</p>
-          <div class="hero-brand-panel">
-            <img
-              src="/assets/images/ffd-lockup-stacked.jpg"
-              alt="Form &amp; Frame Design"
-              width="800"
-              height="780"
-            />
-          </div>
-          <p class="hero-tagline">Build · Proof · Hand-off</p>
+        <div class="hero-visual reveal reveal-delay-1">
+          <figure class="framed">
+            <span class="crop crop-tl" aria-hidden="true"></span>
+            <span class="crop crop-tr" aria-hidden="true"></span>
+            <span class="crop crop-bl" aria-hidden="true"></span>
+            <span class="crop crop-br" aria-hidden="true"></span>
+            <div class="framed-mat">
+              <img
+                src="/assets/images/ffd-lockup-stacked.jpg"
+                alt="Form &amp; Frame Design monogram lockup"
+                width="800"
+                height="780"
+              />
+            </div>
+            <figcaption class="framed-plate">
+              <span>Form &amp; Frame Design</span>
+              <span class="framed-plate-spec">Brand lockup · №&nbsp;001</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Signal</span><i>·</i><span>Site</span><i>·</i><span>Claim</span><i>·</i>
+        <span>Build</span><i>·</i><span>Proof</span><i>·</i><span>Hand-off</span><i>·</i>
+        <span>Signal</span><i>·</i><span>Site</span><i>·</i><span>Claim</span><i>·</i>
+        <span>Build</span><i>·</i><span>Proof</span><i>·</i><span>Hand-off</span><i>·</i>
+        <span>Signal</span><i>·</i><span>Site</span><i>·</i><span>Claim</span><i>·</i>
+        <span>Build</span><i>·</i><span>Proof</span><i>·</i><span>Hand-off</span><i>·</i>
+      </div>
+    </div>
+
     <section id="problem" class="section">
       <div class="wrap">
-        <p class="section-label">The cost of no site</p>
-        <h2>You already have customers talking. You don’t have a home for that trust.</h2>
-        <p class="intro">
-          Google, Yelp, Facebook, Instagram, and Etsy hold your proof — but strangers still can’t land on one
-          clear place that looks like a real business, answers the usual objections, and points them to text, call, or buy.
-          That gap costs inquiries every week. Rebuilding a site from scratch every time costs days you never invoice.
-        </p>
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">01</span>The cost of no site</p>
+          <h2>You already have customers talking. You don’t have a <em>home</em> for that trust.</h2>
+          <p class="intro">
+            Google, Yelp, Facebook, Instagram, and Etsy hold your proof — but strangers still can’t land on one
+            clear place that looks like a real business, answers the usual objections, and points them to text, call, or buy.
+            That gap costs inquiries every week. Rebuilding a site from scratch every time costs days you never invoice.
+          </p>
+        </div>
         <div class="grid-3">
-          <article class="card">
+          <article class="card reveal">
+            <span class="card-index" aria-hidden="true">a</span>
             <h3>Scattered proof</h3>
             <p>Reviews and posts live everywhere. None of it reads as a single professional front door.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-1">
+            <span class="card-index" aria-hidden="true">b</span>
             <h3>Unclear next step</h3>
             <p>Visitors guess whether to DM, call, or show up. Guessing loses sales.</p>
           </article>
-          <article class="card">
+          <article class="card reveal reveal-delay-2">
+            <span class="card-index" aria-hidden="true">c</span>
             <h3>Rebuild tax</h3>
             <p>Freelancers and DIY tools restart the same decisions: layout, copy, mobile, hand-off — every project.</p>
           </article>
@@ -103,14 +149,17 @@
 
     <section id="how" class="section section--tint">
       <div class="wrap">
-        <p class="section-label">How it works</p>
-        <h2>Signal → Site → Claim</h2>
-        <p class="intro">
-          We handle structure, polish, and launch path. You bring the business truth we already find in public —
-          and you claim the result when it looks right.
-        </p>
-        <div class="grid-3">
-          <article class="card">
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">02</span>How it works</p>
+          <h2>Signal <span class="arrow-sep" aria-hidden="true">→</span> Site <span class="arrow-sep" aria-hidden="true">→</span> <em>Claim</em></h2>
+          <p class="intro">
+            We handle structure, polish, and launch path. You bring the business truth we already find in public —
+            and you claim the result when it looks right.
+          </p>
+        </div>
+        <div class="grid-3 steps">
+          <article class="card card--step reveal">
+            <p class="step-num" aria-hidden="true">1</p>
             <p class="step">Step 1 · Signal</p>
             <h3>We gather your proof</h3>
             <p>
@@ -118,7 +167,8 @@
               We invent nothing. Thin data stays honest.
             </p>
           </article>
-          <article class="card">
+          <article class="card card--step reveal reveal-delay-1">
+            <p class="step-num" aria-hidden="true">2</p>
             <p class="step">Step 2 · Site</p>
             <h3>We build inside a factory</h3>
             <p>
@@ -126,7 +176,8 @@
               Package matches your business type — full shop or weekend seller.
             </p>
           </article>
-          <article class="card">
+          <article class="card card--step reveal reveal-delay-2">
+            <p class="step-num" aria-hidden="true">3</p>
             <p class="step">Step 3 · Claim</p>
             <h3>You take ownership</h3>
             <p>
@@ -140,9 +191,11 @@
 
     <section id="today" class="section">
       <div class="wrap">
-        <p class="section-label">Today vs with us</p>
-        <h2>Same business. Clearer front door.</h2>
-        <div class="table-wrap">
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">03</span>Today vs with us</p>
+          <h2>Same business. Clearer <em>front door.</em></h2>
+        </div>
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr>
@@ -180,10 +233,12 @@
 
     <section id="compare" class="section section--tint">
       <div class="wrap">
-        <p class="section-label">Compare</p>
-        <h2>What you’re actually choosing</h2>
-        <p class="intro">Fair comparison — pick the path that matches the job.</p>
-        <div class="table-wrap">
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">04</span>Compare</p>
+          <h2>What you’re actually <em>choosing</em></h2>
+          <p class="intro">Fair comparison — pick the path that matches the job.</p>
+        </div>
+        <div class="table-wrap reveal">
           <table>
             <thead>
               <tr>
@@ -238,15 +293,17 @@
 
     <section id="packages" class="section">
       <div class="wrap">
-        <p class="section-label">Packages</p>
-        <h2>Two packages. Same factory. Different depth.</h2>
-        <p class="intro">
-          Prices are on the page on purpose. Founding discounts, when offered, are time-boxed and written —
-          not a permanent “we’re the cheap option” brand.
-        </p>
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">05</span>Packages</p>
+          <h2>Two packages. Same factory. <em>Different depth.</em></h2>
+          <p class="intro">
+            Prices are on the page on purpose. Founding discounts, when offered, are time-boxed and written —
+            not a permanent “we’re the cheap option” brand.
+          </p>
+        </div>
         <div class="pkg-grid" role="listbox" aria-label="Choose a package">
           <article
-            class="pkg is-selected"
+            class="pkg is-selected reveal"
             id="tier-a"
             role="option"
             tabindex="0"
@@ -254,6 +311,10 @@
             data-package="tier-a"
             data-subject="Claim%20my%20site%20%C2%B7%20Tier%20A%20Full%20package%20%282500%29"
           >
+            <span class="crop crop-tl" aria-hidden="true"></span>
+            <span class="crop crop-tr" aria-hidden="true"></span>
+            <span class="crop crop-bl" aria-hidden="true"></span>
+            <span class="crop crop-br" aria-hidden="true"></span>
             <p class="tier">Tier A · Real shops</p>
             <h3>Full package</h3>
             <p class="amount">$2,500 <small>one-time hand-over</small></p>
@@ -266,10 +327,10 @@
               <li>Proof walkthrough · live preview · claim path</li>
               <li>One written revision window</li>
             </ul>
-            <a class="btn pkg-cta" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site%20%C2%B7%20Tier%20A%20Full%20package%20%282500%29">Claim my site</a>
+            <a class="btn pkg-cta" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site%20%C2%B7%20Tier%20A%20Full%20package%20%282500%29">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
           </article>
           <article
-            class="pkg"
+            class="pkg reveal reveal-delay-1"
             id="tier-b"
             role="option"
             tabindex="0"
@@ -277,6 +338,10 @@
             data-package="tier-b"
             data-subject="Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%28500-1000%29"
           >
+            <span class="crop crop-tl" aria-hidden="true"></span>
+            <span class="crop crop-tr" aria-hidden="true"></span>
+            <span class="crop crop-bl" aria-hidden="true"></span>
+            <span class="crop crop-br" aria-hidden="true"></span>
             <p class="tier">Tier B · Weekenders</p>
             <h3>Clean identity</h3>
             <p class="amount">$500–$1,000 <small>one-time hand-over</small></p>
@@ -288,7 +353,7 @@
               <li>Mobile-first · claim path · one revision</li>
               <li>Not the full shop package (by design)</li>
             </ul>
-            <a class="btn pkg-cta" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%28500-1000%29">Claim my site</a>
+            <a class="btn pkg-cta" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site%20%C2%B7%20Tier%20B%20Clean%20identity%20%28500-1000%29">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
@@ -296,87 +361,94 @@
 
     <section id="fit" class="section section--tint">
       <div class="wrap">
-        <p class="section-label">Fit</p>
-        <h2>See if you’re a right fit</h2>
-        <p class="intro">If most of these are true, we can usually help. If not, a clean no is better than a bad site.</p>
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">06</span>Fit</p>
+          <h2>See if you’re a <em>right fit</em></h2>
+          <p class="intro">If most of these are true, we can usually help. If not, a clean no is better than a bad site.</p>
+        </div>
         <ul class="fit-list">
-          <li><strong>You have public signal</strong> — reviews, social, or market presence people can already find.</li>
-          <li><strong>You lack a strong first-party site</strong> — or the one you have doesn’t earn trust on mobile.</li>
-          <li><strong>You know how customers reach you</strong> — text, call, Messenger, email, or shop link.</li>
-          <li><strong>You can decide</strong> — one owner who can approve claim and a single revision pass.</li>
-          <li><strong>You’re not asking us to invent a brand from nothing</strong> — we elevate what exists; we don’t fake a business.</li>
+          <li class="reveal"><span class="fit-check" aria-hidden="true">✓</span><span><strong>You have public signal</strong> — reviews, social, or market presence people can already find.</span></li>
+          <li class="reveal"><span class="fit-check" aria-hidden="true">✓</span><span><strong>You lack a strong first-party site</strong> — or the one you have doesn’t earn trust on mobile.</span></li>
+          <li class="reveal"><span class="fit-check" aria-hidden="true">✓</span><span><strong>You know how customers reach you</strong> — text, call, Messenger, email, or shop link.</span></li>
+          <li class="reveal"><span class="fit-check" aria-hidden="true">✓</span><span><strong>You can decide</strong> — one owner who can approve claim and a single revision pass.</span></li>
+          <li class="reveal"><span class="fit-check" aria-hidden="true">✓</span><span><strong>You’re not asking us to invent a brand from nothing</strong> — we elevate what exists; we don’t fake a business.</span></li>
         </ul>
       </div>
     </section>
 
     <section id="faq" class="section">
       <div class="wrap">
-        <p class="section-label">FAQ</p>
-        <h2>Straight answers</h2>
-        <div class="faq">
+        <div class="section-head reveal">
+          <p class="section-label"><span class="section-num">07</span>FAQ</p>
+          <h2>Straight <em>answers</em></h2>
+        </div>
+        <div class="faq reveal">
           <details>
-            <summary>Do you invent reviews or photos?</summary>
+            <summary>Do you invent reviews or photos?<span class="faq-marker" aria-hidden="true"></span></summary>
             <p>No. Content comes from your public signals and what you confirm. Thin data means a thinner, honest site — not filler.</p>
           </details>
           <details>
-            <summary>What does “claim” mean?</summary>
+            <summary>What does “claim” mean?<span class="faq-marker" aria-hidden="true"></span></summary>
             <p>
               You get a live preview built for your business. When you claim, you complete the hand-over path
               (payment for paid packages, ownership instructions, one revision window). You’re not stuck in an open-ended project.
             </p>
           </details>
           <details>
-            <summary>Why not a $200 freelancer?</summary>
+            <summary>Why not a $200 freelancer?<span class="faq-marker" aria-hidden="true"></span></summary>
             <p>
               Some freelancers are excellent. Many are cheap because scope, mobile quality, and hand-off are vague.
               Our packages fix those decisions up front. If you only need a temporary flyer page, DIY may be enough.
             </p>
           </details>
           <details>
-            <summary>Why not a big agency?</summary>
+            <summary>Why not a big agency?<span class="faq-marker" aria-hidden="true"></span></summary>
             <p>
               Agencies shine on large brand systems and long retainers. If you need a credible local front door with a clear claim path,
               a factory package is usually faster and more transparent on price.
             </p>
           </details>
           <details>
-            <summary>I’m a weekend seller — do I need the $2,500 package?</summary>
+            <summary>I’m a weekend seller — do I need the $2,500 package?<span class="faq-marker" aria-hidden="true"></span></summary>
             <p>
               Usually no. Tier B is for table and suite sellers who live on SMS, DMs, and Facebook.
               Tier A is for real shops with addresses, hours, and deeper trust needs.
             </p>
           </details>
           <details>
-            <summary>What if we’re not a fit?</summary>
+            <summary>What if we’re not a fit?<span class="faq-marker" aria-hidden="true"></span></summary>
             <p>We’ll say so. We’d rather decline than ship a site that pretends you’re a different business.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section id="claim" class="section section--tint">
+    <section id="claim" class="section section--dark">
       <div class="wrap">
-        <p class="section-label">Claim my site</p>
-        <h2>Ready when you are</h2>
-        <div class="contact-box">
-          <p>
-            Send your business name, city, main public links (Maps, Yelp, Facebook, Instagram, Etsy — whatever you have),
-            and whether you’re a <strong>full shop</strong> or a <strong>weekend seller</strong>.
-            We’ll reply with fit, package, and next step — or a clear no.
-          </p>
-          <p>
-            <a class="mail" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site">hello@formandframedesign.com</a>
-          </p>
-          <p style="margin:0;font-size:0.9rem;">
-            Prefer a human path while domains finish setup?
-            <a href="https://hekmaticonsulting.com/#contact" target="_blank" rel="noopener noreferrer">Hekmati Consulting Group</a>
-            or
-            <a href="https://johnhekmati.com/#contact" target="_blank" rel="noopener noreferrer">johnhekmati.com</a>
-            — put <strong>FFD</strong> in the subject.
-          </p>
-          <p style="margin:1.25rem 0 0;">
-            <a class="btn btn-primary" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site">Claim my site</a>
-          </p>
+        <div class="claim-grid">
+          <div class="reveal">
+            <p class="section-label section-label--dark"><span class="section-num">→</span>Claim my site</p>
+            <h2 class="claim-title">Ready when <em>you</em> are.</h2>
+            <p class="claim-lede">
+              Send your business name, city, main public links (Maps, Yelp, Facebook, Instagram, Etsy — whatever you have),
+              and whether you’re a <strong>full shop</strong> or a <strong>weekend seller</strong>.
+              We’ll reply with fit, package, and next step — or a clear no.
+            </p>
+          </div>
+          <div class="contact-box reveal reveal-delay-1">
+            <p class="contact-label">Write to</p>
+            <p class="contact-mail">
+              <a class="mail" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site">hello@formandframedesign.com</a>
+            </p>
+            <p class="contact-alt">
+              Prefer a human path while domains finish setup?
+              <a href="https://hekmaticonsulting.com/#contact" target="_blank" rel="noopener noreferrer">Hekmati Consulting Group</a>
+              or
+              <a href="https://johnhekmati.com/#contact" target="_blank" rel="noopener noreferrer">johnhekmati.com</a>
+              — put <strong>FFD</strong> in the subject.
+            </p>
+            <a class="btn btn-light" href="mailto:hello@formandframedesign.com?subject=Claim%20my%20site">Claim my site<span class="btn-arrow" aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
     </section>
@@ -384,22 +456,25 @@
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <span>© <span id="y"></span> Form &amp; Frame Design</span>
-      <span>
+      <span class="footer-brand">
+        <img src="/assets/images/ffd-mark-nav.png" width="22" height="22" alt="" />
+        © <span id="y"></span> Form &amp; Frame Design
+      </span>
+      <span class="footer-links">
         <a href="https://hekmaticonsulting.com">Hekmati Consulting Group</a>
-        ·
+        <i>·</i>
         <a href="https://thecognitionfactory.com">The Cognition Factory</a>
-        ·
+        <i>·</i>
         <a href="https://johnhekmati.com">John Hekmati</a>
       </span>
     </div>
   </footer>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
     (function () {
       var pkgs = Array.prototype.slice.call(document.querySelectorAll(".pkg[data-package]"));
-      if (!pkgs.length) return;
 
       function selectPkg(el) {
         pkgs.forEach(function (p) {
@@ -410,7 +485,7 @@
       }
 
       pkgs.forEach(function (pkg) {
-        pkg.addEventListener("click", function (e) {
+        pkg.addEventListener("click", function () {
           // Don't steal the CTA click — still select this package
           selectPkg(pkg);
         });
@@ -421,6 +496,63 @@
           }
         });
       });
+    })();
+
+    (function () {
+      var toggle = document.getElementById("nav-toggle");
+      var links = document.getElementById("nav-links");
+      if (!toggle || !links) return;
+
+      function close() {
+        document.body.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      }
+
+      toggle.addEventListener("click", function () {
+        var open = document.body.classList.toggle("nav-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+
+      links.addEventListener("click", function (e) {
+        if (e.target.tagName === "A") close();
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") close();
+      });
+    })();
+
+    (function () {
+      var nav = document.getElementById("nav");
+      function onScroll() {
+        nav.classList.toggle("nav--scrolled", window.scrollY > 8);
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+
+    (function () {
+      var els = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+      if (!els.length) return;
+
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) {
+        els.forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+      els.forEach(function (el) { io.observe(el); });
     })();
   </script>
 </body>
