@@ -1,0 +1,24 @@
+.DS_Store
+Thumbs.db
+node_modules/
+.wrangler/
+*.log
+.dev.vars
+.serve/
+
+# Operator / factory SSOT stays on disk — not the public marketing repo surface
+agent.md
+ECONOMICS_RUNWAY.md
+FFD_QT_EXIT.md
+SESSION_WRAP_*.md
+LOGO_PIPELINE.md
+websitedesign.md
+DESIGN_BRIEF.md
+Claim_and_Handoff.html
+Operator_Loop.html
+Proof_Artifact.html
+clients/
+pipeline/
+.grok/
+docs/FFD_OPS_POINTER.md
+ffdlogoandhero.jpg

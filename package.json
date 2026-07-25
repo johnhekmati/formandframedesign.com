@@ -1,0 +1,13 @@
+{
+  "name": "formandframedesign-com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Form & Frame Design — formandframedesign.com",
+  "scripts": {
+    "preview": "npx --yes serve . -p 5290",
+    "deploy": "wrangler pages deploy . --project-name=form-and-frame-design --branch=main --commit-dirty=true"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
