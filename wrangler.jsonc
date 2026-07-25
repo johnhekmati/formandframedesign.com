@@ -1,5 +1,8 @@
 {
   "name": "form-and-frame-design",
   "pages_build_output_dir": ".",
-  "compatibility_date": "2026-07-25"
+  "compatibility_date": "2026-07-25",
+  // Static marketing site — missing assets must 404, not SPA-fallback to index.html
+  // (HTML 200 + long /assets/* cache was poisoning phone/preview PNG paths)
+  "not_found_handling": "404-page"
 }

@@ -13,9 +13,17 @@
 /css/*
   Cache-Control: public, max-age=14400, must-revalidate
 
+# Version assets via ?v= query when content changes. Shorter TTL limits poison window
+# if a path is ever requested before deploy propagates.
 /assets/*
-  Cache-Control: public, max-age=14400, must-revalidate
+  Cache-Control: public, max-age=3600, must-revalidate
 
 # Never long-cache HTML — avoids serving new markup against a poisoned ?v= stylesheet URL
+/
+  Cache-Control: public, max-age=60, must-revalidate
+
+/index.html
+  Cache-Control: public, max-age=60, must-revalidate
+
 /*.html
   Cache-Control: public, max-age=60, must-revalidate
