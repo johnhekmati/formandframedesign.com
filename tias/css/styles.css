@@ -15,6 +15,9 @@
   --sun: #e85d04;
   --masa: #ffd100;
   --tia: #e2187a;
+  /* Soft blush for menu zebra — brand pink without yelling */
+  --tia-mist: #fce8f2;
+  --tia-mist-2: #f7d4e7;
   --fresh: #1b7a4e;
   /* Live-site menu sea-green ladder (from tiastacohuttx.com theme) */
   --sea-deep: #02554d;
@@ -1129,11 +1132,20 @@ a:hover {
   grid-template-columns: 1fr auto;
   gap: 0.35rem 1rem;
   padding: 0.8rem 1.05rem;
-  border-top: 1px solid rgba(2, 85, 77, 0.08);
+  border-top: 1px solid rgba(226, 24, 122, 0.1);
+  background: var(--white);
 }
 
 .menu-item:nth-child(even) {
-  background: var(--sea-mist);
+  background: var(--tia-mist);
+}
+
+.menu-item:nth-child(odd) {
+  background: #fffafc;
+}
+
+.menu-item:hover {
+  background: var(--tia-mist-2);
 }
 
 .menu-item[hidden] {
