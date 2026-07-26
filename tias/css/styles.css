@@ -1524,6 +1524,22 @@ a:hover {
   color: var(--tia);
 }
 
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0.85rem;
+  align-items: center;
+}
+
+.footer-social a {
+  color: var(--sea-deep);
+  font-weight: 700;
+}
+
+.footer-social a:hover {
+  color: var(--tia);
+}
+
 /* Employment page extras */
 
 .page-hero {
