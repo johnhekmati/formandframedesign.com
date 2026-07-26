@@ -747,6 +747,8 @@ a:hover {
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 1.5rem;
   align-items: stretch;
+  width: 100%;
+  max-width: 100%;
 }
 
 .finder-panel,
@@ -755,6 +757,9 @@ a:hover {
   border: 1px solid var(--line);
   border-radius: 1.1rem;
   min-height: 44rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .finder-panel {
@@ -818,35 +823,44 @@ a:hover {
   color: var(--white);
 }
 
-/* Mobile: swipeable filter rails instead of wrapping pill clusters */
+/* Mobile: intentional 2-col filter pads (not leftover pills / swipe rails) */
 @media (max-width: 760px) {
   .chip-row,
   .menu-cats {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 0.4rem;
-    padding: 0.1rem 0 0.35rem;
-    margin-inline: -0.15rem;
-    padding-inline: 0.15rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - 1.6rem), transparent);
-    -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - 1.6rem), transparent);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+    padding: 0.55rem;
+    margin: 0 0 0.35rem;
+    border-radius: 0.85rem;
+    background: rgba(2, 85, 77, 0.06);
+    border: 1px solid rgba(2, 85, 77, 0.12);
   }
 
-  .chip-row::-webkit-scrollbar,
-  .menu-cats::-webkit-scrollbar {
-    display: none;
+  .loc-filters {
+    grid-template-columns: 1fr 1fr;
   }
 
   .chip {
-    flex: 0 0 auto;
+    width: 100%;
+    min-height: 2.55rem;
     border-radius: 0.55rem;
-    padding: 0.48rem 0.78rem;
-    font-size: 0.8rem;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.25;
     letter-spacing: 0.01em;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
+    background: var(--white);
+    border-color: rgba(2, 85, 77, 0.18);
+    color: var(--sea-deep);
+  }
+
+  .chip:hover,
+  .chip.is-active {
+    background: var(--sea-deep);
+    border-color: var(--sea-deep);
+    color: var(--white);
   }
 }
 
@@ -873,7 +887,7 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0.4rem 0.8rem;
-  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s var(--ease);
+  transition: border-color 0.2s ease, background 0.2s ease;
   font: inherit;
   color: inherit;
 }
@@ -882,7 +896,6 @@ a:hover {
 .loc-item.is-active {
   border-color: rgba(14, 74, 110, 0.35);
   background: #eef5fa;
-  transform: translateX(2px);
 }
 
 .loc-item strong {
@@ -1006,25 +1019,29 @@ a:hover {
 
 .finder-back {
   display: none;
-  align-self: flex-start;
+  align-self: stretch;
   align-items: center;
-  gap: 0.35rem;
-  margin: 0 0 0.15rem;
-  padding: 0.35rem 0.55rem 0.35rem 0.4rem;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.7rem 1rem;
   border: 0;
-  border-radius: 0.45rem;
-  background: transparent;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: rgba(2, 85, 77, 0.06);
   color: var(--sea-deep);
   font: inherit;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
+  text-align: left;
 }
 
 .finder-back:hover,
 .finder-back:focus-visible {
-  background: rgba(2, 85, 77, 0.08);
+  background: rgba(2, 85, 77, 0.12);
   color: var(--ink);
   outline: none;
 }
@@ -1067,29 +1084,49 @@ a:hover {
 }
 
 @media (max-width: 900px) {
-  .finder { grid-template-columns: 1fr; }
+  .finder {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+  }
+
   .finder-panel,
-  .finder-detail { min-height: 0; }
+  .finder-detail {
+    min-height: 0;
+    width: 100%;
+  }
+
+  .finder-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .finder-controls .btn {
+    width: 100%;
+  }
+
   .finder-media {
     grid-template-rows: auto minmax(14rem, 16rem);
   }
+
   .finder-photo {
     aspect-ratio: 3 / 2;
     min-height: 12rem;
   }
+
   .finder-map,
   .finder-map iframe {
     min-height: 14rem;
   }
+
   .loc-list { max-height: 22rem; }
 
-  /* Stacked finder: show return path to the tapped list row */
+  /* Stacked finder: back bar sits above photo/map */
   .finder-back:not([hidden]) {
     display: inline-flex;
   }
 
-  .finder-detail-body {
-    padding-top: 1rem;
+  .finder-detail {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -1116,10 +1153,16 @@ a:hover {
 }
 
 .menu-cats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 760px) {
+  /* Re-assert after .menu-cats so filters stay a designed 2-col pad */
+  .menu-cats.chip-row,
+  .loc-filters.chip-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .menu-note {
