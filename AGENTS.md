@@ -18,4 +18,5 @@ Static marketing site (`formandframedesign.com`) — plain HTML + CSS + a little
 ### Claimable client pitches
 - Client redesign pitches may live under a path like `/tias/` for private preview/shop.
 - **Do not** add unpaid pitches to the FFD homepage Proof/portfolio, hero carousel, or public “live work” claims until the client pays / claims.
+- Unpaid pitches should stay unlisted: `noindex`/`nofollow` on the pages, `X-Robots-Tag` on `/tias/*`, and `Disallow: /tias/` in `robots.txt`. Share the URL privately; don’t put it in sitemaps or public FFD copy.
 - “We could do this on Wix for $10/mo” is a **no-fit signal** — decline politely; do not discount the factory package to chase that buyer.

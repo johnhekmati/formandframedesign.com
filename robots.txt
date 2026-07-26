@@ -1,0 +1,8 @@
+# Public site is fine to crawl. Unpaid client pitches stay off the index.
+User-agent: *
+Allow: /
+
+Disallow: /tias/
+Disallow: /tias
+
+Sitemap:

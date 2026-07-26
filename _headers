@@ -32,9 +32,11 @@
   Cache-Control: public, max-age=60, must-revalidate
 
 # Claimable client pitches under /tias — short HTML TTL; allow geolocation for nearest-store
+# Keep unpaid pitches out of search / polite crawlers (URL still works for private shop)
 /tias/*
   Cache-Control: public, max-age=60, must-revalidate
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
+  X-Robots-Tag: noindex, nofollow
 
 /tias/css/*
   Cache-Control: public, max-age=14400, must-revalidate
