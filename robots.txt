@@ -4,5 +4,3 @@ Allow: /
 
 Disallow: /tias/
 Disallow: /tias
-
-Sitemap:
