@@ -1298,16 +1298,18 @@ a:hover {
 }
 
 .faq details {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(165deg, #ffe34a 0%, var(--masa) 55%, #f0c400 100%);
+  border: 1px solid rgba(20, 24, 31, 0.14);
   border-radius: 0.85rem;
   padding: 0.2rem 1rem;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 8px 22px rgba(1, 73, 64, 0.16);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .faq details[open] {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(212, 160, 23, 0.45);
+  background: linear-gradient(165deg, #ffe96a 0%, var(--masa) 45%, #e6b800 100%);
+  border-color: rgba(20, 24, 31, 0.28);
+  box-shadow: 0 12px 28px rgba(1, 73, 64, 0.22);
 }
 
 .faq summary {
@@ -1315,7 +1317,7 @@ a:hover {
   list-style: none;
   padding: 0.95rem 0;
   font-weight: 700;
-  color: var(--white);
+  color: var(--ink);
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -1327,7 +1329,7 @@ a:hover {
 .faq summary::after {
   content: "+";
   font-size: 1.3rem;
-  color: var(--masa);
+  color: var(--ink);
   transition: transform 0.25s var(--ease);
 }
 
@@ -1337,7 +1339,18 @@ a:hover {
 
 .faq p {
   margin: 0 0 1rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--ink-soft);
+}
+
+.faq a {
+  color: var(--sea-deep);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.faq a:hover {
+  color: var(--ink);
 }
 
 /* Close / order */
