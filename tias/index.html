@@ -12,8 +12,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dancing+Script:wght@600;700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/tias/css/styles.css?v=tia3" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/tias/css/styles.css?v=tia4" />
 
   <meta property="og:title" content="Tia's Taco Hut — Hometown Tex-Mex" />
   <meta property="og:description" content="San Antonio born. Sixteen doors. Breakfast tacos all day — dine-in, drive-thru, and curbside." />
@@ -47,7 +47,7 @@
   <header class="nav" id="nav">
     <div class="nav-inner">
       <a class="nav-brand" href="#top" aria-label="Tia's Taco Hut — Home">
-        <img class="nav-logo" src="/tias/assets/images/tia-logo.svg" width="148" height="64" alt="Tia's Taco Hut" />
+        <img class="nav-logo" src="/tias/assets/images/tia-logo.svg?v=sign1" width="148" height="64" alt="Tia's Taco Hut" />
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Primary">
         <a href="#locations">Locations</a>
@@ -77,37 +77,15 @@
       </div>
       <div class="hero-serape" aria-hidden="true"></div>
       <div class="hero-content">
-        <div class="hero-brand" aria-label="Tia's Taco Hut">
-          <svg class="hero-logo" viewBox="0 0 640 280" role="img" aria-hidden="true">
-            <defs>
-              <linearGradient id="heroSun" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#e21820"/>
-                <stop offset="38%" stop-color="#f05a12"/>
-                <stop offset="68%" stop-color="#f0b400"/>
-                <stop offset="100%" stop-color="#b8d412"/>
-              </linearGradient>
-              <linearGradient id="heroHut" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffe566"/>
-                <stop offset="45%" stop-color="#ffd000"/>
-                <stop offset="100%" stop-color="#e6b800"/>
-              </linearGradient>
-              <filter id="heroShadow" x="-8%" y="-8%" width="120%" height="130%">
-                <feDropShadow dx="2" dy="3" stdDeviation="1.6" flood-color="#14181f" flood-opacity="0.45"/>
-              </filter>
-            </defs>
-            <circle cx="470" cy="128" r="112" fill="url(#heroSun)"/>
-            <g fill="#14181f">
-              <path d="M428 176c10-38 26-64 44-82 1 16 3 36 0 58-15 4-30 9-44 12z"/>
-              <path d="M452 166c12-44 32-72 54-90 0 20 0 44-5 68-15 5-32 10-49 12z"/>
-              <path d="M492 170c7-30 20-56 38-74 1 18 2 38-2 58-11 4-24 7-36 9z"/>
-              <ellipse cx="470" cy="198" rx="78" ry="11" fill="#2a3210"/>
-              <rect x="392" y="196" width="156" height="7" rx="2"/>
-            </g>
-            <g filter="url(#heroShadow)">
-              <text x="28" y="118" class="hero-logo-script" fill="#e4489c" stroke="#ffffff" stroke-width="2.5" paint-order="stroke fill">Tia's</text>
-              <text x="34" y="218" class="hero-logo-block" fill="url(#heroHut)" stroke="#14181f" stroke-width="5" paint-order="stroke fill">TACO HUT</text>
-            </g>
-          </svg>
+        <div class="hero-brand">
+          <img
+            class="hero-logo"
+            src="/tias/assets/images/tia-logo.svg?v=sign1"
+            width="800"
+            height="300"
+            alt="Tia's Taco Hut"
+            fetchpriority="high"
+          />
         </div>
         <div class="hero-copy">
           <h1>Hometown Tex-Mex that moves volume.</h1>
@@ -365,7 +343,7 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <span class="footer-brand">
-        <img src="/tias/assets/images/tia-logo.svg" width="72" height="32" alt="" />
+        <img src="/tias/assets/images/tia-logo.svg?v=sign1" width="72" height="32" alt="" />
         © <span id="y"></span> Tia's Taco Hut
       </span>
       <span class="footer-links">
