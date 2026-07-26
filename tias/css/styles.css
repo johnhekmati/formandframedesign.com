@@ -1348,7 +1348,16 @@ a:hover {
   color: var(--ink);
 }
 
-/* Close / order */
+/* Close / order — Tia's pink conversion band */
+
+#order {
+  background: linear-gradient(100deg, #c41268 0%, var(--tia) 48%, #f03a94 100%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#order .section-label {
+  color: var(--masa);
+}
 
 .close-grid {
   display: grid;
@@ -1361,14 +1370,14 @@ a:hover {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3rem);
-  color: var(--ink);
+  color: var(--white);
   font-weight: 400;
   line-height: 1.1;
 }
 
 .close-grid p {
   margin: 0.8rem 0 0;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 34rem;
 }
 
@@ -1379,17 +1388,39 @@ a:hover {
   justify-content: flex-end;
 }
 
+#order .btn-primary {
+  background: var(--masa);
+  color: var(--ink);
+}
+
+#order .btn-primary:hover {
+  background: #ffe34a;
+  color: var(--ink);
+}
+
+#order .btn-ghost {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+#order .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--white);
+  color: var(--white);
+}
+
 @media (max-width: 760px) {
   .close-grid { grid-template-columns: 1fr; }
   .close-actions { justify-content: flex-start; }
 }
 
-/* Footer — Tia's pink accent chrome */
+/* Footer — quiet land after the pink ask */
 
 .footer {
   padding: 1.6rem 0 2rem;
-  border-top: 1px solid rgba(120, 10, 64, 0.35);
-  background: linear-gradient(100deg, #c41268 0%, var(--tia) 48%, #f03a94 100%);
+  border-top: 1px solid var(--line);
+  background: var(--white);
 }
 
 .footer-inner {
@@ -1398,7 +1429,7 @@ a:hover {
   gap: 0.8rem 1.5rem;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--muted);
   font-size: 0.92rem;
 }
 
@@ -1406,15 +1437,13 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  color: var(--white);
+  color: var(--ink-soft);
   font-weight: 600;
 }
 
 .footer-brand img {
   width: 1.7rem;
   height: auto;
-  /* Lockup pink disappears on pink — lift contrast on the mark */
-  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35)) brightness(1.08);
 }
 
 .footer-links {
@@ -1425,12 +1454,12 @@ a:hover {
 }
 
 .footer-links a {
-  color: var(--white);
+  color: var(--ink-soft);
   font-weight: 600;
 }
 
 .footer-links a:hover {
-  color: var(--masa);
+  color: var(--tia);
 }
 
 /* Employment page extras */
