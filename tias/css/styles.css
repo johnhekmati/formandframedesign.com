@@ -658,7 +658,9 @@ a:hover {
   gap: 0.9rem;
   width: max-content;
   padding: 0.15rem 1.25rem;
-  animation: marquee-rtl 48s linear infinite;
+  /* Duration set in JS from review count so a long set doesn't race */
+  animation: marquee-rtl 320s linear infinite;
+  will-change: transform;
 }
 
 .yelp-card {

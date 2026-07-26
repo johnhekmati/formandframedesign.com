@@ -68,106 +68,7 @@
   <main id="top">
     <div class="yelp-crawl yelp-crawl--top" aria-label="Five-star love from guests">
       <div class="yelp-crawl-inner">
-        <div class="yelp-track" aria-hidden="true">
-          <!-- set A -->
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Incredible breakfast tacos!!! The tortillas are delicious. Friendly and quick service.”</p>
-            <footer>Guest · San Antonio</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Obsessed with breakfast tacos here. Potato, egg &amp; cheese on a toasted tortilla — always packed. Ladies are super kind.”</p>
-            <footer>Michelle M. · via Yelp</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Always a good experience at Tia's on St. Mary's. Good food, nice service, and clean. Breakfast or lunch — recommend!”</p>
-            <footer>Guest · St. Mary's</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Tacos were legit! Good bean and cheese and spicy potatoes and egg. Service was quick.”</p>
-            <footer>Guest · after Texas Eats</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Green enchiladas were delicious. Workers were very friendly and served quickly. We love coming back.”</p>
-            <footer>Guest · San Antonio</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Best breakfast tacos in town! Tortillas always soft and fresh. Chorizo &amp; papa goes crazy.”</p>
-            <footer>Guest · San Antonio</footer>
-          </article>
-          <!-- set B (loop) -->
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Incredible breakfast tacos!!! The tortillas are delicious. Friendly and quick service.”</p>
-            <footer>Guest · San Antonio</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Obsessed with breakfast tacos here. Potato, egg &amp; cheese on a toasted tortilla — always packed. Ladies are super kind.”</p>
-            <footer>Michelle M. · via Yelp</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Always a good experience at Tia's on St. Mary's. Good food, nice service, and clean. Breakfast or lunch — recommend!”</p>
-            <footer>Guest · St. Mary's</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Tacos were legit! Good bean and cheese and spicy potatoes and egg. Service was quick.”</p>
-            <footer>Guest · after Texas Eats</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Green enchiladas were delicious. Workers were very friendly and served quickly. We love coming back.”</p>
-            <footer>Guest · San Antonio</footer>
-          </article>
-          <article class="yelp-card">
-            <div class="yelp-card-top">
-              <span class="yelp-mark" aria-hidden="true">y</span>
-              <span class="yelp-stars" aria-label="5 stars">★★★★★</span>
-            </div>
-            <p>“Best breakfast tacos in town! Tortillas always soft and fresh. Chorizo &amp; papa goes crazy.”</p>
-            <footer>Guest · San Antonio</footer>
-          </article>
-        </div>
+        <div class="yelp-track" id="yelp-track" aria-hidden="true"></div>
       </div>
     </div>
 
@@ -465,6 +366,75 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    /* Yelp chyron — long 5★ set so the loop is hard to catch */
+    (function () {
+      var reviews = [
+        { q: "Incredible breakfast tacos!!! The tortillas are delicious. Friendly and quick service.", by: "Guest · San Antonio" },
+        { q: "Obsessed with breakfast tacos here. Potato, egg & cheese on a toasted tortilla — always packed. Ladies are super kind.", by: "Michelle M. · via Yelp" },
+        { q: "Always a good experience at Tia's on St. Mary's. Good food, nice service, and clean. Breakfast or lunch — recommend!", by: "Guest · St. Mary's" },
+        { q: "Tacos were legit! Good bean and cheese and spicy potatoes and egg. Service was quick.", by: "Guest · after Texas Eats" },
+        { q: "Green enchiladas were delicious. Workers were very friendly and served quickly. We love coming back.", by: "Guest · San Antonio" },
+        { q: "Best breakfast tacos in town! Tortillas always soft and fresh. Chorizo & papa goes crazy.", by: "Guest · San Antonio" },
+        { q: "Liz at the drive-thru is friendly, on it, and makes sure your order is right. Love the chips & salsa.", by: "Guest · via reviews" },
+        { q: "Love this location. Food is always on point — fresh and delicious. Tea is perfect every time too.", by: "Guest · San Antonio" },
+        { q: "Excellent staff. People at the window are incredibly friendly and hardworking. I always come back.", by: "Guest · San Antonio" },
+        { q: "Our lunch was delicious and hot. The staff was very friendly and helpful.", by: "Guest · San Antonio" },
+        { q: "Takeout breakfast tacos were good and quick. Easy morning win before work.", by: "Guest · San Antonio" },
+        { q: "Hands down the best Huevos Rancheros plate I've ever had. Papas with chorizo goes crazy.", by: "Guest · via DoorDash" },
+        { q: "The rice is cooked perfectly and very flavorful. Tortillas always soft, fresh, and perfect.", by: "Guest · San Antonio" },
+        { q: "Love the breakfast tacos — Chorizo & Papa is my favorite. Red salsa is sheer perfection.", by: "Guest · San Antonio" },
+        { q: "Food came quick and hot, with just the right amount of salsa. Very good tortillas.", by: "Guest · San Antonio" },
+        { q: "The barbacoa was so juicy and fresh. Chorizo and egg was full of flavor.", by: "Guest · San Antonio" },
+        { q: "Potato and egg tacos with green salsa are delicious — potatoes cooked through, plenty of egg.", by: "Guest · San Antonio" },
+        { q: "Tried the barbacoa this time and it was phenomenal. Potato and egg taco was stuffed.", by: "Guest · San Antonio" },
+        { q: "Affordable with plenty of choices. Food came out hot and delicious.", by: "Guest · San Antonio" },
+        { q: "Great experience every time I visit. Portions are solid for the price.", by: "Guest · San Antonio" },
+        { q: "Drive-thru is fast and the breakfast tacos hit every time.", by: "Guest · San Antonio" },
+        { q: "Bean & cheese never misses. Soft tortillas, fair prices, hometown flavor.", by: "Guest · San Antonio" },
+        { q: "Papa Ranchero on a toasted tortilla — packed and perfect with green salsa.", by: "Guest · San Antonio" },
+        { q: "Clean spot, friendly crew, and plates that feed you right.", by: "Guest · San Antonio" },
+        { q: "Came for breakfast tacos, stayed for the enchiladas. Will be back for lunch.", by: "Guest · San Antonio" },
+        { q: "Quick service without feeling rushed. Tacos taste homemade.", by: "Guest · San Antonio" },
+        { q: "Best morning run in SA — open early, tacos ready, salsa on point.", by: "Guest · San Antonio" },
+        { q: "Puffy tacos had great flavor and the plate was generous.", by: "Guest · San Antonio" },
+        { q: "Family ordered a mix of breakfast and lunch — everything showed up hot.", by: "Guest · San Antonio" },
+        { q: "Consistent quality across visits. That's hard to find.", by: "Guest · San Antonio" },
+        { q: "Carne guisada plate hit the spot after a long morning.", by: "Guest · San Antonio" },
+        { q: "Friendly from the window to the bag. Feels like a real San Antonio hut.", by: "Guest · San Antonio" },
+        { q: "Migas plate was loaded. Exactly what we needed before work.", by: "Guest · San Antonio" },
+        { q: "Fresh chips, spicy salsa, and tacos that don't skimp on filling.", by: "Guest · San Antonio" },
+        { q: "New Braunfels stop never disappoints — same taste, same pace.", by: "Guest · New Braunfels" },
+        { q: "Sixteen doors and they still feel local. That's the magic.", by: "Guest · San Antonio" },
+        { q: "Barbacoa taco after church — juicy, filling, worth the line.", by: "Guest · San Antonio" },
+        { q: "Kids demolish the bean & cheese. Adults fight over the green enchiladas.", by: "Guest · San Antonio" },
+        { q: "Curbside was easy and the bag was packed right. Hot when we got home.", by: "Guest · San Antonio" },
+        { q: "Early open is a lifesaver. Breakfast tacos before the city wakes up.", by: "Guest · San Antonio" }
+      ];
+
+      var track = document.getElementById("yelp-track");
+      if (!track) return;
+
+      function cardHtml(r) {
+        return (
+          '<article class="yelp-card">' +
+            '<div class="yelp-card-top">' +
+              '<span class="yelp-mark" aria-hidden="true">y</span>' +
+              '<span class="yelp-stars" aria-label="5 stars">★★★★★</span>' +
+            "</div>" +
+            "<p>“" + r.q.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "”</p>" +
+            "<footer>" + r.by.replace(/&/g, "&amp;") + "</footer>" +
+          "</article>"
+        );
+      }
+
+      var html = reviews.map(cardHtml).join("");
+      // Duplicate set for seamless RTL loop (animation translates 50%)
+      track.innerHTML = html + html;
+      // Keep visual pace similar to the old 6-card / 48s crawl
+      var seconds = Math.max(48, Math.round(reviews.length * 8));
+      track.style.animationDuration = seconds + "s";
+    })();
 
     /* Nav */
     (function () {
