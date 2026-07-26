@@ -1338,7 +1338,25 @@ a:hover {
   .fact-row { grid-template-columns: 1fr; }
 }
 
-/* FAQ */
+/* FAQ — docked right to mirror Order’s left bias above */
+
+#faq .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#faq .section-head {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#faq .faq {
+  margin-left: auto;
+  margin-right: 0;
+  width: min(100%, 48rem);
+}
 
 .faq {
   display: grid;
