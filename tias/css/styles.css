@@ -620,7 +620,7 @@ a:hover {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 1.1rem;
-  min-height: 28rem;
+  min-height: 36rem;
 }
 
 .finder-panel {
