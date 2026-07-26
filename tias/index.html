@@ -15,12 +15,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/tias/css/styles.css?v=tia23" />
+  <link rel="stylesheet" href="/tias/css/styles.css?v=tia24" />
 
   <meta property="og:title" content="Tia's Taco Hut — Hometown Tex-Mex" />
   <meta property="og:description" content="San Antonio born. Sixteen doors. Breakfast tacos all day — dine-in, drive-thru, and curbside." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/tias/assets/images/hero-plates-poster.jpg" />
+  <meta property="og:image" content="/tias/assets/images/hero-plates-poster.jpg?v=loop2" />
   <!-- Unlisted claimable pitch — no canonical; share URL privately until claimed -->
 
   <script type="application/ld+json">
@@ -29,7 +29,7 @@
     "@type": "Restaurant",
     "name": "Tia's Taco Hut",
     "url": "https://www.tiastacohuttx.com/",
-    "image": "https://formandframedesign.com/tias/assets/images/hero-plates-poster.jpg",
+    "image": "https://formandframedesign.com/tias/assets/images/hero-plates-poster.jpg?v=loop2",
     "servesCuisine": ["Tex-Mex", "Mexican"],
     "priceRange": "$",
     "telephone": "(210) 255-1133",
@@ -81,13 +81,13 @@
           loop
           playsinline
           preload="metadata"
-          poster="/tias/assets/images/hero-plates-poster.jpg"
+          poster="/tias/assets/images/hero-plates-poster.jpg?v=loop2"
         >
-          <source src="/tias/assets/video/hero-plates.mp4?v=smooth1" type="video/mp4" />
+          <source src="/tias/assets/video/hero-plates.mp4?v=loop2" type="video/mp4" />
         </video>
         <img
           class="hero-poster"
-          src="/tias/assets/images/hero-plates-poster.jpg"
+          src="/tias/assets/images/hero-plates-poster.jpg?v=loop2"
           alt=""
           width="1600"
           height="900"
@@ -366,6 +366,17 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+
+    /* Hero video — mark playing so poster can't flash on loop seek */
+    (function () {
+      var v = document.querySelector('.hero-video');
+      var media = document.querySelector('.hero-media');
+      if (!v || !media) return;
+      function on() { media.classList.add('is-playing'); }
+      v.addEventListener('playing', on);
+      if (!v.paused) on();
+    })();
 
     /* Yelp chyron — long 5★ set so the loop is hard to catch */
     (function () {

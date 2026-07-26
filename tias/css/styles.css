@@ -370,6 +370,12 @@ a:hover {
   z-index: 0;
 }
 
+.hero-media.is-playing .hero-poster {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+
 .hero-media .hero-video {
   z-index: 1;
 }
