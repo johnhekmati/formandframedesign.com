@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/tias/css/styles.css?v=tia26" />
+  <link rel="stylesheet" href="/tias/css/styles.css?v=tia27" />
 
   <meta property="og:title" content="Tia's Taco Hut — Hometown Tex-Mex" />
   <meta property="og:description" content="San Antonio born. Sixteen doors. Breakfast tacos all day — dine-in, drive-thru, and curbside." />
@@ -238,13 +238,13 @@
         </div>
 
         <div class="finder reveal">
-          <div class="finder-panel">
+          <div class="finder-panel" id="loc-finder-top">
             <div class="finder-controls">
               <label class="visually-hidden" for="loc-q">Search locations</label>
               <input id="loc-q" type="search" placeholder="Search street, zip, or city…" autocomplete="off" />
               <button class="btn btn-ink" type="button" id="loc-near">Use my location</button>
             </div>
-            <div class="chip-row" role="group" aria-label="Filter locations">
+            <div class="chip-row loc-filters" role="group" aria-label="Filter locations">
               <button type="button" class="chip is-active" data-filter="all">All</button>
               <button type="button" class="chip" data-filter="late">Open til 9pm</button>
               <button type="button" class="chip" data-filter="early">Open by 5:30</button>
@@ -255,6 +255,10 @@
           </div>
 
           <aside class="finder-detail" id="loc-detail" aria-live="polite">
+            <button type="button" class="finder-back" id="loc-back" hidden>
+              <span aria-hidden="true">←</span>
+              <span id="loc-back-label">Back to list</span>
+            </button>
             <div class="finder-media" id="detail-media" hidden>
               <figure class="finder-photo">
                 <img id="detail-photo" src="" alt="" width="960" height="540" />
@@ -263,10 +267,6 @@
               <div class="finder-map" id="detail-map"></div>
             </div>
             <div class="finder-detail-body">
-              <button type="button" class="finder-back" id="loc-back" hidden>
-                <span aria-hidden="true">←</span>
-                <span id="loc-back-label">Back to list</span>
-              </button>
               <p class="eyebrow">Selected location</p>
               <h3 id="detail-name">Choose a hut</h3>
               <p class="addr" id="detail-addr">Search or tap a location to see hours, phone, photo, and map.</p>
@@ -552,13 +552,25 @@
       var backBtn = document.getElementById("loc-back");
       var backLabel = document.getElementById("loc-back-label");
       var detailEl = document.getElementById("loc-detail");
-      var panelEl = document.querySelector(".finder-panel");
+      var panelEl = document.getElementById("loc-finder-top");
+
+      function navOffsetPx() {
+        var nav = document.getElementById("nav");
+        return (nav && nav.offsetHeight) ? nav.offsetHeight : 68;
+      }
 
       function scrollWithNavOffset(el) {
         if (!el) return;
-        var navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-h")) || 68;
-        var top = el.getBoundingClientRect().top + window.scrollY - navH - 12;
+        var top = el.getBoundingClientRect().top + window.pageYOffset - navOffsetPx() - 10;
         window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      }
+
+      function scrollListItemIntoRail(btn) {
+        if (!btn || !listEl) return;
+        var listRect = listEl.getBoundingClientRect();
+        var btnRect = btn.getBoundingClientRect();
+        var delta = (btnRect.top - listRect.top) - (listEl.clientHeight * 0.15);
+        listEl.scrollTop = Math.max(0, listEl.scrollTop + delta);
       }
 
       function isStackedFinder() {
@@ -642,14 +654,14 @@
       qEl.addEventListener("input", renderList);
 
       backBtn.addEventListener("click", function () {
+        // Page scroll to the search/list top — never scrollIntoView the row
+        // (that was landing on the photo/list seam on Android).
         scrollWithNavOffset(panelEl);
-        requestAnimationFrame(function () {
-          var active = listEl.querySelector(".loc-item.is-active");
-          if (active) {
-            active.scrollIntoView({ behavior: "smooth", block: "nearest" });
-            active.focus({ preventScroll: true });
-          }
-        });
+        var active = listEl.querySelector(".loc-item.is-active");
+        if (active) {
+          scrollListItemIntoRail(active);
+          try { active.focus({ preventScroll: true }); } catch (e) { /* older WebViews */ }
+        }
       });
 
       document.getElementById("loc-near").addEventListener("click", function () {
