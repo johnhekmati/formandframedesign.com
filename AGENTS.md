@@ -16,17 +16,19 @@ Obey home rules: `principal-trust-default` · `principal-reports` (~/.grok/rules
 
 Do **not** stop after “ready to commit?” when the Principal already said ship.
 
-### Package rails (public)
-| Package | Who | Public price |
-|---------|-----|--------------|
-| **L1 Shop** | 1–2 doors | **$2,500** |
-| **L1 Identity** | Weekenders + online anchors | **$500–$1,000** (volume $500 is valid) |
-| **L2 Multi-site** | Several–many doors | **$10k–$15k** (list ~$12k) |
+### Package rails (public) — display order Identity → Shop → L2
+| Package | Who | Public price | Live proof |
+|---------|-----|--------------|------------|
+| **L1 Identity** | Weekenders + online anchors | **$500–$1,000** (volume $500 is valid) | johnhekmati.com |
+| **L1 Shop** | 1–2 doors | **$2,500** | professionalmmainstitute.com |
+| **L2 Multi-site & platform** | Multi-door **or** product platform (web / desktop / mobile / all) | **$10k–$15k** (list ~$12k) | thecognitionfactory.com |
 
-- Multi-door → L2. Do not sell L2 as L1.  
+- Multi-door **or** real product platform → L2. Do not sell L2 as L1.  
 - Identity $500 flea/table work is **in-tier**, not a discount.  
 - L2 rock bottom $8k is **operator-only** (not marketing page). Below $8k = walk or re-scope to L1.  
-- VAS (location SEO pages, menu depth, retainers) separate from turnkey core.
+- Package CTAs: all “Claim my site” — black off-hover, accent green on-hover.  
+- VAS (location SEO pages, menu depth, retainers) separate from turnkey core.  
+- Cache-bust: bump `?v=` on `styles.css` when CSS changes (current target `ffd9`+).
 
 ### Gates (ask Principal)
 New public price floors · unpaid pitch on homepage proof · DNS/secrets · live cold send to a named prospect · reclass multi-site under $8k as if it were L2.

@@ -1173,33 +1173,22 @@ th.highlight {
   font-weight: 600;
 }
 
-/* Pin CTAs to the same baseline across unequal list lengths */
+/* All package CTAs match: black off-hover, accent green on-hover */
 .pkg .pkg-cta {
   margin-top: auto;
   width: 100%;
   min-height: 3rem;
-}
-
-.pkg.is-selected .pkg-cta {
   background: var(--ink);
   color: var(--paper);
   border-color: transparent;
 }
 
-.pkg.is-selected .pkg-cta:hover {
+.pkg .pkg-cta:hover,
+.pkg.is-selected .pkg-cta:hover,
+.pkg:not(.is-selected) .pkg-cta:hover {
   background: var(--accent);
   color: #fff;
-  text-decoration: none;
-}
-
-.pkg:not(.is-selected) .pkg-cta {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--line-strong);
-}
-
-.pkg:not(.is-selected) .pkg-cta:hover {
-  border-color: var(--ink);
+  border-color: transparent;
   text-decoration: none;
 }
 
