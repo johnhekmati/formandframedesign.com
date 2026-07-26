@@ -38,8 +38,10 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
   X-Robots-Tag: noindex, nofollow
 
+# Short TTL while pitch is actively iterating — long CSS cache + ?v= poison
+# (request new token before deploy lands) kept We Hear You right-docked after left-align shipped
 /tias/css/*
-  Cache-Control: public, max-age=14400, must-revalidate
+  Cache-Control: public, max-age=60, must-revalidate
 
 /tias/assets/*
   Cache-Control: public, max-age=3600, must-revalidate

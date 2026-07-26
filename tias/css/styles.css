@@ -1338,7 +1338,7 @@ a:hover {
   .fact-row { grid-template-columns: 1fr; }
 }
 
-/* FAQ — left lane, same reading margin as Order above */
+/* FAQ — left lane, same reading margin as Order above (tia23) */
 
 .faq {
   display: grid;
