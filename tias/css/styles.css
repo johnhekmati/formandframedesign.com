@@ -115,7 +115,8 @@ a:hover {
   .hero-brand,
   .hero-copy,
   .hero-media,
-  .shout-track {
+  .shout-track,
+  .yelp-track {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
@@ -574,13 +575,13 @@ a:hover {
   gap: 2.5rem;
   width: max-content;
   padding: 1rem 0;
-  animation: marquee 32s linear infinite;
+  animation: marquee-ltr 32s linear infinite;
 }
 
 .shout-track span {
   font-weight: 700;
   color: var(--serape-deep);
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .shout-track i {
@@ -588,9 +589,102 @@ a:hover {
   font-style: normal;
 }
 
-@keyframes marquee {
+/* Yelp-color love crawl — opposite direction of the topic ticker */
+.yelp-crawl {
+  --yelp-red: #ff1a1a;
+  --yelp-red-deep: #d32323;
+  --yelp-ink: #2b1a14;
+  --yelp-paper: #fff8f5;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, #fff1ec 0%, var(--yelp-paper) 40%, #ffffff 100%);
+  border-bottom: 1px solid rgba(211, 35, 35, 0.12);
+  padding: 1.15rem 0 1.35rem;
+}
+
+.yelp-crawl-inner {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.yelp-track {
+  display: flex;
+  gap: 0.9rem;
+  width: max-content;
+  padding: 0.15rem 1.25rem;
+  animation: marquee-rtl 48s linear infinite;
+}
+
+.yelp-card {
+  flex: 0 0 auto;
+  width: min(19.5rem, 78vw);
+  background: var(--white);
+  border: 1px solid rgba(211, 35, 35, 0.16);
+  border-radius: 0.85rem;
+  padding: 0.9rem 1rem 0.95rem;
+  box-shadow: 0 10px 24px rgba(211, 35, 35, 0.08);
+  color: var(--yelp-ink);
+}
+
+.yelp-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.yelp-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 0.4rem;
+  background: var(--yelp-red-deep);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.yelp-stars {
+  color: var(--yelp-red-deep);
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.yelp-card p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  color: var(--yelp-ink);
+}
+
+.yelp-card footer {
+  margin-top: 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(43, 26, 20, 0.62);
+}
+
+.yelp-crawl:hover .yelp-track,
+.shouts:hover .shout-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-ltr {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-rtl {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
 /* Locations finder */
