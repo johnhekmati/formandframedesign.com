@@ -18,6 +18,7 @@
   /* Soft blush for menu zebra — brand pink without yelling */
   --tia-mist: #fce8f2;
   --tia-mist-2: #f7d4e7;
+  --tia-mist-wash: #fff5fa;
   --fresh: #1b7a4e;
   /* Live-site menu sea-green ladder (from tiastacohuttx.com theme) */
   --sea-deep: #02554d;
@@ -1132,20 +1133,48 @@ a:hover {
   grid-template-columns: 1fr auto;
   gap: 0.35rem 1rem;
   padding: 0.8rem 1.05rem;
-  border-top: 1px solid rgba(226, 24, 122, 0.1);
+  border-top: 1px solid rgba(2, 85, 77, 0.08);
   background: var(--white);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* Open zebra: soft Tia's pink ↔ seafoam green bands */
+.menu-item:nth-child(odd) {
+  background: linear-gradient(
+    100deg,
+    var(--tia-mist) 0%,
+    var(--tia-mist-wash) 48%,
+    var(--tia-mist) 100%
+  );
+  border-top-color: rgba(226, 24, 122, 0.1);
 }
 
 .menu-item:nth-child(even) {
-  background: var(--tia-mist);
+  background: linear-gradient(
+    100deg,
+    var(--sea-mist) 0%,
+    var(--sea-foam) 48%,
+    var(--sea-mist) 100%
+  );
+  border-top-color: rgba(2, 85, 77, 0.1);
 }
 
-.menu-item:nth-child(odd) {
-  background: #fffafc;
+.menu-item:nth-child(odd):hover {
+  background: linear-gradient(
+    100deg,
+    var(--tia-mist-2) 0%,
+    var(--tia-mist) 50%,
+    var(--tia-mist-2) 100%
+  );
 }
 
-.menu-item:hover {
-  background: var(--tia-mist-2);
+.menu-item:nth-child(even):hover {
+  background: linear-gradient(
+    100deg,
+    #d4f3ef 0%,
+    var(--sea-mist) 50%,
+    #d4f3ef 100%
+  );
 }
 
 .menu-item[hidden] {
