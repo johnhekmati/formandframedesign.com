@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Dancing+Script:wght@600;700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/tias/css/styles.css?v=tia2" />
+  <link rel="stylesheet" href="/tias/css/styles.css?v=tia3" />
 
   <meta property="og:title" content="Tia's Taco Hut — Hometown Tex-Mex" />
   <meta property="og:description" content="San Antonio born. Sixteen doors. Breakfast tacos all day — dine-in, drive-thru, and curbside." />
@@ -87,9 +87,9 @@
                 <stop offset="100%" stop-color="#b8d412"/>
               </linearGradient>
               <linearGradient id="heroHut" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#a8b820"/>
-                <stop offset="42%" stop-color="#6f7a10"/>
-                <stop offset="100%" stop-color="#3a4010"/>
+                <stop offset="0%" stop-color="#ffe566"/>
+                <stop offset="45%" stop-color="#ffd000"/>
+                <stop offset="100%" stop-color="#e6b800"/>
               </linearGradient>
               <filter id="heroShadow" x="-8%" y="-8%" width="120%" height="130%">
                 <feDropShadow dx="2" dy="3" stdDeviation="1.6" flood-color="#14181f" flood-opacity="0.45"/>
@@ -104,8 +104,8 @@
               <rect x="392" y="196" width="156" height="7" rx="2"/>
             </g>
             <g filter="url(#heroShadow)">
-              <text x="28" y="118" class="hero-logo-script" fill="#e4489c">Tia's</text>
-              <text x="32" y="216" class="hero-logo-block" fill="url(#heroHut)">TACO HUT</text>
+              <text x="28" y="118" class="hero-logo-script" fill="#e4489c" stroke="#ffffff" stroke-width="2.5" paint-order="stroke fill">Tia's</text>
+              <text x="34" y="218" class="hero-logo-block" fill="url(#heroHut)" stroke="#14181f" stroke-width="5" paint-order="stroke fill">TACO HUT</text>
             </g>
           </svg>
         </div>
@@ -427,7 +427,7 @@
     var LOCATIONS = [
       { id: "fred", name: "Fredericksburg Rd", address: "4519 Fredericksburg Rd.", city: "San Antonio, TX 78201", phone: "(210) 255-1133", hours: "Mon–Sat 5:30am–9:00pm\nSun 6:00am–3:00pm", late: true, early: true, nb: false, lat: 29.51039, lng: -98.56676 },
       { id: "mont", name: "West Montgomery", address: "6032 Wt Montgomery Rd., #101", city: "San Antonio, TX 78252", phone: "(210) 257-5420", hours: "Mon–Sat 5:30am–9:00pm\nSun 6:00am–3:00pm", late: true, early: true, nb: false, lat: 29.3568, lng: -98.6485 },
-      { id: "evans", name: "Evans Rd", address: "3643 Evans Rd., #101", city: "San Antonio, TX 78259", phone: "(210) 257-6581", hours: "Mon–Sat 5:30am–9:00pm\nSun 6:00am–3:00pm", late: true, early: true, nb: false, lat: 29.64775, lng: -98.42762, photoKind: "storefront" },
+      { id: "evans", name: "Evans Rd", address: "3643 Evans Rd., #101", city: "San Antonio, TX 78259", phone: "(210) 257-6581", hours: "Mon–Sat 5:30am–9:00pm\nSun 6:00am–3:00pm", late: true, early: true, nb: false, lat: 29.64775, lng: -98.42762 },
       { id: "naco", name: "Nacogdoches", address: "2615 Nacogdoches", city: "San Antonio, TX 78217", phone: "(210) 251-4018", hours: "Open daily 5:30am–9:00pm", late: true, early: true, nb: false, lat: 29.51953, lng: -98.44916 },
       { id: "potranco", name: "Potranco Rd", address: "12834 Potranco Rd., #100", city: "San Antonio, TX 78253", phone: "(210) 263-9469", hours: "Open daily 5:30am–9:00pm", late: true, early: true, nb: false, lat: 29.42891, lng: -98.74690 },
       { id: "semil", name: "SE Military", address: "2402 SE Military Dr., #101", city: "San Antonio, TX 78223", phone: "(210) 368-9087", hours: "Open daily 6:00am–9:00pm", late: true, early: false, nb: false, lat: 29.35199, lng: -98.45469 },
@@ -493,9 +493,7 @@
         var photoSrc = "/tias/assets/images/locations/" + loc.id + ".jpg";
         photo.src = photoSrc;
         photo.alt = loc.name + " — " + loc.address;
-        photoCap.textContent = loc.photoKind === "storefront"
-          ? "Storefront · " + loc.name
-          : "Aerial · " + loc.address;
+        photoCap.textContent = "Storefront · " + loc.name;
         document.getElementById("detail-dirs").href = "https://www.google.com/maps/dir/?api=1&destination=" + q;
         document.getElementById("detail-call").href = "tel:" + loc.phone.replace(/[^\d+]/g, "");
         map.innerHTML = '<iframe title="Google Map for ' + loc.name.replace(/"/g, "") + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=' + q + '&amp;z=16&amp;output=embed"></iframe>';

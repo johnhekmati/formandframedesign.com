@@ -7,9 +7,9 @@
       <stop offset="100%" stop-color="#b8d412"/>
     </linearGradient>
     <linearGradient id="hutGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#a8b820"/>
-      <stop offset="42%" stop-color="#6f7a10"/>
-      <stop offset="100%" stop-color="#3a4010"/>
+      <stop offset="0%" stop-color="#ffe566"/>
+      <stop offset="45%" stop-color="#ffd000"/>
+      <stop offset="100%" stop-color="#e6b800"/>
     </linearGradient>
     <filter id="softShadow" x="-8%" y="-8%" width="120%" height="130%">
       <feDropShadow dx="2" dy="3" stdDeviation="1.5" flood-color="#14181f" flood-opacity="0.4"/>
@@ -24,7 +24,7 @@
     <rect x="392" y="196" width="156" height="7" rx="2"/>
   </g>
   <g filter="url(#softShadow)">
-    <text x="28" y="120" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="120" fill="#e4489c" letter-spacing="-2">Tia's</text>
-    <text x="32" y="216" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="80" fill="url(#hutGrad)" letter-spacing="3">TACO HUT</text>
+    <text x="28" y="120" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="120" fill="#e4489c" stroke="#ffffff" stroke-width="3" paint-order="stroke fill" letter-spacing="-2">Tia's</text>
+    <text x="32" y="216" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="80" fill="url(#hutGrad)" stroke="#14181f" stroke-width="5" paint-order="stroke fill" letter-spacing="3">TACO HUT</text>
   </g>
 </svg>
