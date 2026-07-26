@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" role="img" aria-label="Tia's Taco Hut">
+  <defs>
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e21820"/>
+      <stop offset="38%" stop-color="#f05a12"/>
+      <stop offset="68%" stop-color="#f0b400"/>
+      <stop offset="100%" stop-color="#b8d412"/>
+    </linearGradient>
+    <linearGradient id="hutGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a8b820"/>
+      <stop offset="42%" stop-color="#6f7a10"/>
+      <stop offset="100%" stop-color="#3a4010"/>
+    </linearGradient>
+    <filter id="softShadow" x="-8%" y="-8%" width="120%" height="130%">
+      <feDropShadow dx="2" dy="3" stdDeviation="1.5" flood-color="#14181f" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <circle cx="470" cy="128" r="112" fill="url(#sunGrad)"/>
+  <g fill="#14181f">
+    <path d="M428 176c10-38 26-64 44-82 1 16 3 36 0 58-15 4-30 9-44 12z"/>
+    <path d="M452 166c12-44 32-72 54-90 0 20 0 44-5 68-15 5-32 10-49 12z"/>
+    <path d="M492 170c7-30 20-56 38-74 1 18 2 38-2 58-11 4-24 7-36 9z"/>
+    <ellipse cx="470" cy="198" rx="78" ry="11" fill="#2a3210"/>
+    <rect x="392" y="196" width="156" height="7" rx="2"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <text x="28" y="120" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="120" fill="#e4489c" letter-spacing="-2">Tia's</text>
+    <text x="32" y="216" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="80" fill="url(#hutGrad)" letter-spacing="3">TACO HUT</text>
+  </g>
+</svg>
