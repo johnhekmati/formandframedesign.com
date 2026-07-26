@@ -13,12 +13,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/tias/css/styles.css?v=tia13" />
+  <link rel="stylesheet" href="/tias/css/styles.css?v=tia14" />
 
   <meta property="og:title" content="Tia's Taco Hut — Hometown Tex-Mex" />
   <meta property="og:description" content="San Antonio born. Sixteen doors. Breakfast tacos all day — dine-in, drive-thru, and curbside." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/tias/assets/images/hero-feast.jpg" />
+  <meta property="og:image" content="/tias/assets/images/hero-plates-poster.jpg" />
   <link rel="canonical" href="https://formandframedesign.com/tias/" />
 
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
     "@type": "Restaurant",
     "name": "Tia's Taco Hut",
     "url": "https://www.tiastacohuttx.com/",
-    "image": "https://formandframedesign.com/tias/assets/images/hero-feast.jpg",
+    "image": "https://formandframedesign.com/tias/assets/images/hero-plates-poster.jpg",
     "servesCuisine": ["Tex-Mex", "Mexican"],
     "priceRange": "$",
     "telephone": "(210) 255-1133",
@@ -171,11 +171,23 @@
 
     <section class="hero" aria-label="Tia's Taco Hut">
       <div class="hero-media" aria-hidden="true">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="/tias/assets/images/hero-plates-poster.jpg"
+        >
+          <source src="/tias/assets/video/hero-plates.mp4" type="video/mp4" />
+        </video>
         <img
-          src="/tias/assets/images/hero-feast.jpg"
+          class="hero-poster"
+          src="/tias/assets/images/hero-plates-poster.jpg"
           alt=""
-          width="1200"
-          height="1200"
+          width="1600"
+          height="900"
           fetchpriority="high"
         />
         <div class="hero-shade"></div>
