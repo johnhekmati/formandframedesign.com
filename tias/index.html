@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/tias/css/styles.css?v=tia25" />
+  <link rel="stylesheet" href="/tias/css/styles.css?v=tia26" />
 
   <meta property="og:title" content="Tia's Taco Hut — Hometown Tex-Mex" />
   <meta property="og:description" content="San Antonio born. Sixteen doors. Breakfast tacos all day — dine-in, drive-thru, and curbside." />
@@ -263,6 +263,10 @@
               <div class="finder-map" id="detail-map"></div>
             </div>
             <div class="finder-detail-body">
+              <button type="button" class="finder-back" id="loc-back" hidden>
+                <span aria-hidden="true">←</span>
+                <span id="loc-back-label">Back to list</span>
+              </button>
               <p class="eyebrow">Selected location</p>
               <h3 id="detail-name">Choose a hut</h3>
               <p class="addr" id="detail-addr">Search or tap a location to see hours, phone, photo, and map.</p>
@@ -545,7 +549,24 @@
         return hay.indexOf(q) !== -1;
       }
 
-      function selectLocation(loc) {
+      var backBtn = document.getElementById("loc-back");
+      var backLabel = document.getElementById("loc-back-label");
+      var detailEl = document.getElementById("loc-detail");
+      var panelEl = document.querySelector(".finder-panel");
+
+      function scrollWithNavOffset(el) {
+        if (!el) return;
+        var navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-h")) || 68;
+        var top = el.getBoundingClientRect().top + window.scrollY - navH - 12;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      }
+
+      function isStackedFinder() {
+        return window.matchMedia("(max-width: 900px)").matches;
+      }
+
+      function selectLocation(loc, opts) {
+        opts = opts || {};
         selectedId = loc.id;
         document.getElementById("detail-name").textContent = loc.name;
         document.getElementById("detail-addr").textContent = loc.address + " · " + loc.city;
@@ -558,6 +579,9 @@
         var photoCap = document.getElementById("detail-photo-cap");
         actions.hidden = false;
         media.hidden = false;
+        backBtn.hidden = false;
+        backLabel.textContent = loc.name;
+        backBtn.setAttribute("aria-label", "Back to " + loc.name + " in the location list");
         var q = encodeURIComponent(loc.address + ", " + loc.city);
         var photoSrc = "/tias/assets/images/locations/" + loc.id + ".jpg";
         photo.src = photoSrc;
@@ -567,6 +591,9 @@
         document.getElementById("detail-call").href = "tel:" + loc.phone.replace(/[^\d+]/g, "");
         map.innerHTML = '<iframe title="Google Map for ' + loc.name.replace(/"/g, "") + '" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps?q=' + q + '&amp;z=16&amp;output=embed"></iframe>';
         renderList();
+        if (opts.scrollDetail && isStackedFinder()) {
+          requestAnimationFrame(function () { scrollWithNavOffset(detailEl); });
+        }
       }
 
       function renderList() {
@@ -595,7 +622,9 @@
           if (loc.distance != null) {
             btn.querySelector(".dist").textContent = loc.distance.toFixed(1) + " mi";
           }
-          btn.addEventListener("click", function () { selectLocation(loc); });
+          btn.addEventListener("click", function () {
+            selectLocation(loc, { scrollDetail: true });
+          });
           li.appendChild(btn);
           listEl.appendChild(li);
         });
@@ -612,6 +641,17 @@
 
       qEl.addEventListener("input", renderList);
 
+      backBtn.addEventListener("click", function () {
+        scrollWithNavOffset(panelEl);
+        requestAnimationFrame(function () {
+          var active = listEl.querySelector(".loc-item.is-active");
+          if (active) {
+            active.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            active.focus({ preventScroll: true });
+          }
+        });
+      });
+
       document.getElementById("loc-near").addEventListener("click", function () {
         if (!navigator.geolocation) {
           statusEl.textContent = "Geolocation isn’t available in this browser — try search.";
@@ -624,7 +664,7 @@
             return Object.assign({}, loc, { distance: haversine(userPos, loc) });
           }).sort(function (a, b) { return a.distance - b.distance; });
           renderList();
-          if (sorted[0]) selectLocation(sorted[0]);
+          if (sorted[0]) selectLocation(sorted[0], { scrollDetail: true });
         }, function () {
           statusEl.textContent = "Couldn’t read your location — search by zip or street instead.";
         }, { enableHighAccuracy: false, timeout: 8000, maximumAge: 60000 });
