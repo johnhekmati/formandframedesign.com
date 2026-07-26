@@ -15,10 +15,6 @@
   --sun: #e85d04;
   --masa: #ffd100;
   --tia: #e2187a;
-  /* Soft blush for menu zebra — brand pink without yelling */
-  --tia-mist: #fce8f2;
-  --tia-mist-2: #f7d4e7;
-  --tia-mist-wash: #fff5fa;
   --fresh: #1b7a4e;
   /* Live-site menu sea-green ladder (from tiastacohuttx.com theme) */
   --sea-deep: #02554d;
@@ -1136,15 +1132,15 @@ a:hover {
   transition: background 0.2s ease, border-color 0.2s ease;
 }
 
-/* Open zebra: soft Tia's pink ↔ seafoam green bands */
+/* Open zebra: white ↔ soft seafoam (green-dominant; pink reserved for accents) */
 .menu-item:nth-child(odd) {
   background: linear-gradient(
     100deg,
-    var(--tia-mist) 0%,
-    var(--tia-mist-wash) 48%,
-    var(--tia-mist) 100%
+    var(--white) 0%,
+    #f7fffe 48%,
+    var(--white) 100%
   );
-  border-top-color: rgba(226, 24, 122, 0.1);
+  border-top-color: rgba(2, 85, 77, 0.08);
 }
 
 .menu-item:nth-child(even) {
@@ -1160,9 +1156,9 @@ a:hover {
 .menu-item:nth-child(odd):hover {
   background: linear-gradient(
     100deg,
-    var(--tia-mist-2) 0%,
-    var(--tia-mist) 50%,
-    var(--tia-mist-2) 100%
+    #f3fbfa 0%,
+    var(--white) 50%,
+    #f3fbfa 100%
   );
 }
 
@@ -1388,12 +1384,12 @@ a:hover {
   .close-actions { justify-content: flex-start; }
 }
 
-/* Footer */
+/* Footer — Tia's pink accent chrome */
 
 .footer {
   padding: 1.6rem 0 2rem;
-  border-top: 1px solid var(--line);
-  background: var(--paper);
+  border-top: 1px solid rgba(120, 10, 64, 0.35);
+  background: linear-gradient(100deg, #c41268 0%, var(--tia) 48%, #f03a94 100%);
 }
 
 .footer-inner {
@@ -1402,7 +1398,7 @@ a:hover {
   gap: 0.8rem 1.5rem;
   justify-content: space-between;
   align-items: center;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 0.92rem;
 }
 
@@ -1410,13 +1406,15 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  color: var(--ink-soft);
+  color: var(--white);
   font-weight: 600;
 }
 
 .footer-brand img {
   width: 1.7rem;
   height: auto;
+  /* Lockup pink disappears on pink — lift contrast on the mark */
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, 0.35)) brightness(1.08);
 }
 
 .footer-links {
@@ -1427,8 +1425,12 @@ a:hover {
 }
 
 .footer-links a {
-  color: var(--ink-soft);
+  color: var(--white);
   font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--masa);
 }
 
 /* Employment page extras */
