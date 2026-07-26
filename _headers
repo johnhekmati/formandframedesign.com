@@ -30,3 +30,14 @@
 
 /*.html
   Cache-Control: public, max-age=60, must-revalidate
+
+# Claimable client pitches under /tias — short HTML TTL; allow geolocation for nearest-store
+/tias/*
+  Cache-Control: public, max-age=60, must-revalidate
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self)
+
+/tias/css/*
+  Cache-Control: public, max-age=14400, must-revalidate
+
+/tias/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
