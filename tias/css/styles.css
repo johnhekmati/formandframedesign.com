@@ -535,19 +535,32 @@ a:hover {
   color: rgba(255, 255, 255, 0.75);
 }
 
-/* Ways */
+/* Ways — bamboo yellow trial band */
+
+#ways {
+  background: linear-gradient(165deg, #ffe34a 0%, var(--masa) 55%, #f0c400 100%);
+  color: var(--ink);
+}
+
+#ways .section-label {
+  color: var(--sea-deep);
+}
+
+#ways .section-head .intro {
+  color: var(--ink-soft);
+}
 
 .ways {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid rgba(20, 24, 31, 0.16);
+  border-bottom: 1px solid rgba(20, 24, 31, 0.16);
 }
 
 .way {
   padding: 1.6rem 1.4rem;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid rgba(20, 24, 31, 0.14);
 }
 
 .way:last-child {
@@ -564,7 +577,7 @@ a:hover {
 
 .way p {
   margin: 0.45rem 0 0;
-  color: var(--muted);
+  color: var(--ink-soft);
   font-size: 0.98rem;
 }
 
