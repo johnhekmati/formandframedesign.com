@@ -105,6 +105,7 @@ Required columns: slug · business · package · status · opened · kill-by · 
 | `ECONOMICS_RUNWAY.md` | Package prices / floors |
 | `Claim_and_Handoff.html` | Pay → own path |
 | `docs/CUSTOMER_REGISTRY.md` | Active previews ledger |
+| `docs/STRIPE.md` | Payment Links · claim pay |
 | `clients/*` | Engagement briefs (may stay local) |
 
 ---

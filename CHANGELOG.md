@@ -6,6 +6,14 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — Stripe claim scaffold (Payment Links)
+
+- Volume pay path: Payment Links (not cart/plugin theater)
+- `js/stripe-links.js` + `js/claim-pay.js` — CTAs upgrade when links pasted
+- Operator runbook: `docs/STRIPE.md`
+- Mailto remains fallback until Dashboard products exist
+- Stripe CLI installed on operator machine (login = Principal)
+
 ## 2026-07-28 — Customer preview hygiene (revenue posture)
 
 - **Sharp rails:** `docs/PREVIEW_HYGIENE.md` — status classes, timebox, no unpaid homepage proof

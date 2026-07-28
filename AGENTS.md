@@ -33,6 +33,12 @@ Do **not** stop after “ready to commit?” when the Principal already said shi
 ### Gates (ask Principal)
 New public price floors · unpaid pitch on homepage proof · DNS/secrets · live cold send to a named prospect · reclass multi-site under $8k as if it were L2.
 
+### Stripe claim payments
+- **Not a WP plugin** — static site + **Payment Links** (`docs/STRIPE.md`).
+- Public link map: `js/stripe-links.js` · wiring: `js/claim-pay.js`.
+- Empty links → mailto fallback. Never commit secret API keys.
+- CLI (operator machine): `stripe login` after `winget install Stripe.StripeCli`.
+
 ### Customer preview hygiene (revenue posture)
 Full rails: **`docs/PREVIEW_HYGIENE.md`** · ledger: **`docs/CUSTOMER_REGISTRY.md`**.
 
