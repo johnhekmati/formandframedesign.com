@@ -28,7 +28,7 @@ Do **not** stop after “ready to commit?” when the Principal already said shi
 - L2 rock bottom $8k is **operator-only** (not marketing page). Below $8k = walk or re-scope to L1.  
 - Package CTAs: all “Claim my site” — black off-hover, accent green on-hover.  
 - VAS (location SEO pages, menu depth, retainers) separate from turnkey core.  
-- Cache-bust: bump `?v=` on `styles.css` when CSS changes (current target `ffd9`+).
+- Cache-bust: bump `?v=` on `styles.css` when CSS changes (current target `ffd10`+).
 
 ### Gates (ask Principal)
 New public price floors · unpaid pitch on homepage proof · DNS/secrets · live cold send to a named prospect · reclass multi-site under $8k as if it were L2.

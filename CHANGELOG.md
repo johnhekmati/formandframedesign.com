@@ -6,6 +6,17 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — House design pass + TCF proof refresh
+
+- Full public-site design pass (`ffd10`): spacing, packages, work cards, FAQ, claim, mobile gutters
+- Proof stack ordered **Identity → Shop → L2** (matches package rails); renumbered plates
+- Fresh **thecognitionfactory.com** portfolio assets from live site + product UI:
+  - desktop/phone heroes (live capture)
+  - map / practice / save-place product tiles
+  - CF mark thumb for hero chip
+- TCF work copy aligned to current loop + product surfaces (Windows · Android · workflow floor)
+- Claim pay note moved off inline style; CSS cache-bust `ffd10`
+
 ## 2026-07-28 — Stripe claim scaffold (Payment Links)
 
 - Volume pay path: Payment Links (not cart/plugin theater)
