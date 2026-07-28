@@ -31,17 +31,20 @@
 /*.html
   Cache-Control: public, max-age=60, must-revalidate
 
-# Claimable client pitches under /tias — short HTML TTL; allow geolocation for nearest-store
-# Keep unpaid pitches out of search / polite crawlers (URL still works for private shop)
-/tias/*
+# Customer previews — canon /customer/{slug}/ (docs/PREVIEW_HYGIENE.md)
+# Unlisted: noindex; short HTML TTL; geolocation OK for nearest-store demos
+/customer/*
   Cache-Control: public, max-age=60, must-revalidate
   Permissions-Policy: camera=(), microphone=(), geolocation=(self)
-  X-Robots-Tag: noindex, nofollow
+  X-Robots-Tag: noindex, nofollow, noarchive
 
-# Short TTL while pitch is actively iterating — long CSS cache + ?v= poison
-# (request new token before deploy lands) kept We Hear You right-docked after left-align shipped
-/tias/css/*
+/customer/*/css/*
   Cache-Control: public, max-age=60, must-revalidate
 
-/tias/assets/*
+/customer/*/assets/*
   Cache-Control: public, max-age=3600, must-revalidate
+
+# Legacy /tias → redirect stubs only
+/tias/*
+  Cache-Control: public, max-age=60, must-revalidate
+  X-Robots-Tag: noindex, nofollow, noarchive

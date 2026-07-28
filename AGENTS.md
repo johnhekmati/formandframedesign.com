@@ -33,6 +33,18 @@ Do **not** stop after “ready to commit?” when the Principal already said shi
 ### Gates (ask Principal)
 New public price floors · unpaid pitch on homepage proof · DNS/secrets · live cold send to a named prospect · reclass multi-site under $8k as if it were L2.
 
+### Customer preview hygiene (revenue posture)
+Full rails: **`docs/PREVIEW_HYGIENE.md`** · ledger: **`docs/CUSTOMER_REGISTRY.md`**.
+
+| Rule | Practice |
+|------|----------|
+| Canon path | `/customer/{slug}/` only (legacy `/tias` = redirect) |
+| Unlisted | noindex + `X-Robots-Tag` + `robots.txt` Disallow `/customer/` |
+| Before host | Package class + registry row + kill-by (default +30d) |
+| Homepage proof | **Paid / portfolio permission only** — never unpaid |
+| Claim path | Required; no orphan free mockup warehouse |
+| CHANGELOG | Open / claim / kill of a preview = entry |
+
 ---
 
 ## Cursor Cloud specific instructions
@@ -51,7 +63,9 @@ Static marketing site (`formandframedesign.com`) — plain HTML + CSS + a little
 - Operator/factory docs are intentionally kept off this public repo (see `.gitignore`), so some paths referenced elsewhere won't exist here.
 
 ### Claimable client pitches
-- Client redesign pitches may live under a path like `/tias/` for private preview/shop.
-- **Do not** add unpaid pitches to the FFD homepage Proof/portfolio, hero carousel, or public “live work” claims until the client pays / claims.
-- Unpaid pitches should stay unlisted: `noindex`/`nofollow` on the pages, `X-Robots-Tag` on `/tias/*`, and `Disallow: /tias/` in `robots.txt`. Share the URL privately; don’t put it in sitemaps or public FFD copy.
+- Live only under **`/customer/{slug}/`**. Registry row required (`docs/CUSTOMER_REGISTRY.md`).
+- **Do not** add unpaid pitches to the FFD homepage Proof/portfolio, hero carousel, or public “live work” claims until paid / portfolio OK.
+- Unlisted stack: page `noindex` + `_headers` `X-Robots-Tag` + `robots.txt` `Disallow: /customer/`. Share URL privately; no sitemaps / public FFD copy.
+- Timebox unpaid previews (default 30 days). Kill or claim — do not park forever.
+- Preview chrome: thin FFD private-preview bar + claim link (see Tia's).
 - “We could do this on Wix for $10/mo” is a **no-fit signal** — decline politely; do not discount the factory package to chase that buyer.

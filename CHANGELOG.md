@@ -6,6 +6,15 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — Customer preview hygiene (revenue posture)
+
+- **Sharp rails:** `docs/PREVIEW_HYGIENE.md` — status classes, timebox, no unpaid homepage proof
+- **Registry:** `docs/CUSTOMER_REGISTRY.md` — Tia's listed L2 · private-preview · kill-by 2026-08-27
+- **Canon path:** `/customer/{slug}/` — Tia's moved from `/tias/` → `/customer/tias/`; legacy redirects
+- Unlisted stack: robots + `_headers` X-Robots-Tag for `/customer/*`
+- Preview chrome bar on Tia's (private · not portfolio · claim path)
+- AGENTS + Claim_and_Handoff aligned
+
 ## 2026-07-28 — Release hygiene baseline
 
 - Established this changelog as required ship surface (parity with other live LOBs)

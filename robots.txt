@@ -1,6 +1,12 @@
-# Public site is fine to crawl. Unpaid client pitches stay off the index.
+# Public site is fine to crawl. Customer previews stay off the index.
+# Rules: docs/PREVIEW_HYGIENE.md
 User-agent: *
 Allow: /
 
+# Canon namespace for claimable / unpaid previews
+Disallow: /customer/
+Disallow: /customer
+
+# Legacy path (redirects only) — keep out of index
 Disallow: /tias/
 Disallow: /tias
