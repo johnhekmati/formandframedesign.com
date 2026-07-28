@@ -6,6 +6,13 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — Nav scroll-spy + JH chip alignment
+
+- Header links get TCF-style scroll-spy underline in **FFD teal** as sections enter view
+- `data-nav` + IntersectionObserver (`-40% / -55%` band); `aria-current` on active link
+- JH world chips height-aligned: letterbox crop on HCG + `object-fit: cover` on work-marks
+- Cache-bust `ffd12`
+
 ## 2026-07-28 — TCF proof stills corrected
 
 - Desktop/phone heroes: static capture (animations off) so CF mark is fully readable — not mid-rotation

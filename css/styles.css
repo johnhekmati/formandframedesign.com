@@ -218,23 +218,29 @@ em {
   position: relative;
 }
 
+/* Underline: hover + scroll-spy active (FFD teal — same cue as TCF electric) */
 .nav-links a:not(.nav-cta)::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 100%;
+  width: 0;
   bottom: -0.35rem;
   height: 2px;
   background: var(--accent);
-  transition: right 0.22s ease;
+  transition: width 0.28s var(--ease-out);
 }
 
 .nav-links a:not(.nav-cta):hover {
   color: var(--ink);
 }
 
-.nav-links a:not(.nav-cta):hover::after {
-  right: 0;
+.nav-links a:not(.nav-cta):hover::after,
+.nav-links a:not(.nav-cta).is-active::after {
+  width: 100%;
+}
+
+.nav-links a:not(.nav-cta).is-active {
+  color: var(--ink);
 }
 
 .nav-cta {
@@ -322,7 +328,12 @@ em {
   }
 
   .nav-links a:not(.nav-cta)::after {
-    display: none;
+    bottom: 0.55rem;
+    left: 0.25rem;
+  }
+
+  .nav-links a:not(.nav-cta).is-active {
+    color: var(--accent-deep);
   }
 
   .nav-links .nav-cta {
@@ -1390,7 +1401,7 @@ th.highlight {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center center;
   border: 1px solid var(--line);
   border-radius: 0.45rem;
@@ -1400,14 +1411,6 @@ th.highlight {
 
 .work-card:hover .work-marks img {
   border-color: rgba(27, 120, 103, 0.28);
-}
-
-/* Product UI tiles (TCF map / practice / save) — landscape captures, not marks */
-.work-marks--product img {
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top center;
-  background: #050505;
 }
 
 .work-body {
