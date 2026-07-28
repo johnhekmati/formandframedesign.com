@@ -6,6 +6,13 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — FFD monogram split (hero logo + chrome mark)
+
+- **`ffd-logo.jpg`** — dimensional monogram sits with hero copy (identity still, not nav)
+- **`ffd-mark-nav.png`** — flat mark for nav + footer; rebuilds **favicon-32** + **apple-touch**
+- Schema logo stays flat `ffd-mark.png`; OG/social image → `ffd-logo.jpg`
+- Cache-bust `ffd11` on CSS, favicons, mark-nav, hero logo
+
 ## 2026-07-28 — House design pass + TCF proof refresh
 
 - Full public-site design pass (`ffd10`): spacing, packages, work cards, FAQ, claim, mobile gutters

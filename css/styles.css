@@ -439,6 +439,26 @@ em {
   }
 }
 
+/* Hero identity — 3D monogram sits with copy (not chrome) */
+
+.hero-logo-plate {
+  margin: 0 0 1.35rem;
+  width: clamp(5.25rem, 14vw, 7rem);
+  max-width: 40%;
+  line-height: 0;
+}
+
+.hero-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.55rem;
+  box-shadow:
+    0 1px 2px rgba(28, 25, 23, 0.06),
+    0 14px 32px rgba(28, 25, 23, 0.1);
+  background: #f0ebe3;
+}
+
 .eyebrow {
   display: flex;
   align-items: center;
