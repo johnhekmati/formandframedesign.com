@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=ffd12" />
+  <link rel="stylesheet" href="/css/styles.css?v=ffd13" />
 
   <meta property="og:title" content="Form & Frame Design" />
   <meta property="og:description" content="Professional websites grounded in your real signals — shops, anchors, and multi-site operators. Clear packages. Full ownership. Claim my site." />
@@ -137,11 +137,21 @@
                     playsinline
                     preload="metadata"
                     poster="/assets/images/portfolio/pmmai/pmmai-desktop-hero.png?v=1"
-                    aria-label="Live proof loop: Professional MMA Institute, The Cognition Factory, and John Hekmati — about ten seconds each"
+                    aria-hidden="true"
+                    tabindex="-1"
                   >
                     <source src="/assets/video/hero-proof-loop.webm" type="video/webm" />
                     <source src="/assets/video/hero-proof-loop.mp4" type="video/mp4" />
                   </video>
+                  <img
+                    id="hero-desktop-img"
+                    class="hero-desktop-img"
+                    src="/assets/images/portfolio/pmmai/pmmai-desktop-hero.png?v=1"
+                    width="1440"
+                    height="900"
+                    alt="Live proof desktop preview"
+                    decoding="async"
+                  />
                 </div>
               </div>
               <div class="device-phone" aria-hidden="true">
@@ -511,9 +521,9 @@
               </div>
             </a>
             <div class="work-marks" aria-hidden="true">
-              <img src="/assets/images/portfolio/jh/jh-world-hcg.png?v=3" alt="" width="200" height="200" loading="lazy" />
-              <img src="/assets/images/portfolio/jh/jh-world-tcf.png?v=3" alt="" width="200" height="200" loading="lazy" />
-              <img src="/assets/images/portfolio/jh/jh-world-pmmai.jpg?v=3" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/jh/jh-world-hcg.png?v=4" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/jh/jh-world-tcf.png?v=4" alt="" width="200" height="200" loading="lazy" />
+              <img src="/assets/images/portfolio/jh/jh-world-pmmai.jpg?v=4" alt="" width="200" height="200" loading="lazy" />
             </div>
           </div>
 
@@ -932,10 +942,11 @@
       els.forEach(function (el) { io.observe(el); });
     })();
 
-    /* Hero proof video: sync chrome URL, phone, plate, and chip to ~10s slides */
+    /* Hero proof: video drives timing; desktop still + phone always match current slide */
     (function () {
       var video = document.getElementById("hero-proof-video");
-      if (!video) return;
+      var desktop = document.getElementById("hero-desktop-img");
+      if (!video && !desktop) return;
 
       /* Video order is baked (PMMAI → TCF → JH); plate numbers match Proof section. */
       var slides = [
@@ -946,6 +957,7 @@
           title: "Professional MMA Institute",
           spec: "Live site · №\u00a0002",
           label: "Professional MMA Institute · professionalmmainstitute.com",
+          desktop: "/assets/images/portfolio/pmmai/pmmai-desktop-hero.png?v=1",
           phone: "/assets/images/portfolio/pmmai/pmmai-phone-hero.png?v=1",
           thumb: "/assets/images/portfolio/pmmai/pmmai-14-crest.jpg",
         },
@@ -956,6 +968,7 @@
           title: "The Cognition Factory",
           spec: "Live site · №\u00a0003",
           label: "The Cognition Factory · thecognitionfactory.com",
+          desktop: "/assets/images/portfolio/tcf/tcf-desktop-hero.png?v=3",
           phone: "/assets/images/portfolio/tcf/tcf-phone-hero.png?v=3",
           thumb: "/assets/images/portfolio/tcf/tcf-mark-thumb.png?v=3",
         },
@@ -966,6 +979,7 @@
           title: "John Hekmati",
           spec: "Live site · №\u00a0001",
           label: "John Hekmati · johnhekmati.com",
+          desktop: "/assets/images/portfolio/jh/jh-desktop-hero.png?v=1",
           phone: "/assets/images/portfolio/jh/jh-phone-hero.png?v=1",
           thumb: "/assets/images/portfolio/jh/jh-mark-portrait.png",
         },
@@ -986,6 +1000,14 @@
         var s = slides[i];
         if (link) link.href = s.href;
         if (urlEl) urlEl.textContent = s.url;
+        if (desktop && s.desktop && desktop.getAttribute("src") !== s.desktop) {
+          desktop.classList.add("is-fading");
+          window.setTimeout(function () {
+            desktop.src = s.desktop;
+            desktop.alt = s.title + " — desktop homepage";
+            desktop.classList.remove("is-fading");
+          }, 160);
+        }
         if (phone && phone.getAttribute("src") !== s.phone) phone.src = s.phone;
         if (plateTitle) plateTitle.textContent = s.title;
         if (plateSpec) plateSpec.textContent = s.spec;
@@ -993,8 +1015,8 @@
         if (proofThumb && proofThumb.getAttribute("src") !== s.thumb) proofThumb.src = s.thumb;
       }
 
-      function sync() {
-        var t = video.currentTime || 0;
+      function syncFromVideo() {
+        var t = (video && video.currentTime) || 0;
         for (var i = 0; i < slides.length; i++) {
           if (t < slides[i].until) {
             applySlide(i);
@@ -1006,21 +1028,35 @@
 
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) {
-        video.removeAttribute("autoplay");
-        video.pause();
+        if (video) {
+          video.removeAttribute("autoplay");
+          video.pause();
+        }
         applySlide(0);
         return;
       }
 
       applySlide(0);
-      video.addEventListener("timeupdate", sync);
-      video.addEventListener("seeked", sync);
-      video.addEventListener("play", sync);
 
-      var playPromise = video.play();
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () { /* autoplay blocked — poster remains */ });
+      if (video) {
+        video.addEventListener("timeupdate", syncFromVideo);
+        video.addEventListener("seeked", syncFromVideo);
+        video.addEventListener("play", syncFromVideo);
+        var playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(function () { /* autoplay blocked — stills still cycle via timer */ });
+        }
       }
+
+      /* Fallback timer if video never plays (blocked / missing) */
+      var slideMs = [9500, 9000, 9000];
+      var idx = 0;
+      function tick() {
+        if (video && !video.paused && !video.ended && video.readyState >= 2) return;
+        idx = (idx + 1) % slides.length;
+        applySlide(idx);
+      }
+      window.setInterval(tick, 10000);
     })();
   </script>
 </body>

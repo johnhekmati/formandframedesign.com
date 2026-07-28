@@ -6,6 +6,12 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — JH chip center + hero desktop stills
+
+- JH world marks: restore framed logos + `object-fit: contain` (full H · CF · PMMAI, equal squares, optical center)
+- Hero browser viewport: **desktop still overlay** syncs with slides so TCF shows current logo (not baked video frame)
+- Phone + desktop + chip stay in lockstep; video remains only as timing source under the still
+
 ## 2026-07-28 — Nav scroll-spy + JH chip alignment
 
 - Header links get TCF-style scroll-spy underline in **FFD teal** as sections enter view

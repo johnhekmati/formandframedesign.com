@@ -736,6 +736,7 @@ em {
 }
 
 .browser-viewport {
+  position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   background: #050505;
@@ -743,7 +744,8 @@ em {
 
 .browser-viewport img,
 .browser-viewport video,
-.hero-proof-video {
+.hero-proof-video,
+.hero-desktop-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -751,8 +753,21 @@ em {
   display: block;
 }
 
-.hero-proof-video {
+.hero-proof-video,
+.hero-desktop-img {
   background: #050505;
+}
+
+/* Desktop still above loop video so TCF/JH/PMMAI always match current brand */
+.hero-desktop-img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.hero-desktop-img.is-fading {
+  opacity: 0.35;
 }
 
 /* Phone device overlaid on hero preview */
@@ -1396,12 +1411,13 @@ th.highlight {
   align-items: stretch;
 }
 
+/* Equal square tiles; contain + center so full logos share one optical centerline */
 .work-marks img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
   border: 1px solid var(--line);
   border-radius: 0.45rem;
