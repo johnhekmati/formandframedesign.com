@@ -6,6 +6,12 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-28 — TCF proof stills corrected
+
+- Desktop/phone heroes: static capture (animations off) so CF mark is fully readable — not mid-rotation
+- Proof tiles restored to **HAL-E · AAE · CSS** brand logos (not desktop-app screenshots)
+- Hero carousel phone + chip thumb use current flat matte CF mark / settled phone frame (`?v=3`)
+
 ## 2026-07-28 — FFD monogram split (hero logo + chrome mark)
 
 - **`ffd-logo.jpg`** — dimensional monogram sits with hero copy (identity still, not nav)
