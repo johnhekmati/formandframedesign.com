@@ -6,6 +6,11 @@ Public site (FFD). Newest first.
 
 ---
 
+## 2026-07-29 — TCF portfolio screenshots refreshed
+
+- Fresh desktop + phone captures of live thecognitionfactory.com (no stale hero string)
+- Cache-bust portfolio TCF assets `?v=4`
+
 ## 2026-07-28 — JH chip center + hero desktop stills
 
 - JH world marks: restore framed logos + `object-fit: contain` (full H · CF · PMMAI, equal squares, optical center)
