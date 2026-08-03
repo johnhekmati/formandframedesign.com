@@ -2,7 +2,7 @@
 
 ## Principal trust (director mode)
 
-Obey home rules: `principal-trust-default` · `principal-reports` (~/.grok/rules/).
+Home rules: workspace `C:\Grok\CLAUDE.md` + this file (legacy `~/.grok/rules/` retired with the Grok CLI).
 
 **Default:** ~75% delegated trust — decide → do → report. Principal is PM/director, not junior merge queue.
 
