@@ -8,6 +8,6 @@
     "deploy": "wrangler pages deploy . --project-name=form-and-frame-design --branch=main --commit-dirty=true"
   },
   "devDependencies": {
-    "wrangler": "^4.0.0"
+    "wrangler": "^4.123.0"
   }
 }
